@@ -1,0 +1,141 @@
+* {
+    font-family: "Iosevka", "Font Awesome",sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+window#waybar {                /*Waybar*/
+    background-color: #540804; /*Background*/
+    border: 2px solid #81171b; /*Border*/
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: #81171b;
+    box-shadow: inset 0 -3px #ea8c55;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #81171b;
+}
+
+#workspaces button.active {
+    background-color: #cb342a;
+    border: 2px solid #c75146;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock {
+    background-color: transparent;
+    padding: 4px;
+}
+
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray,
+#mode,
+#idle_inhibitor,
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: transparent;
+}
+
+#memory {
+    background-color: transparent;
+}
+
+#network {
+    background-color: transparent;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#wireplumber {
+    background-color: transparent;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+
+#tray {
+    background-color: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: transparent;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
