@@ -3,10 +3,9 @@
   lib,
   self,
   inputs,
-  config',
   ...
 }: {
-  home-manager.users.${config'.username} = {
+  #home-manager.users.donnan = {
     wayland.windowManager.hyprland = {
       settings = {
         monitor = [
@@ -135,5 +134,5 @@
         bind = $mod SHIFT,S,exec, grim -g "$(slurp -w 0)" - | wl-copy
       '';
     };
-  };
+  #};
 }

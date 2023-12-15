@@ -4,11 +4,24 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: let
-      inherit (nixpkgs) lib;
+    inherit (self) outputs pkgs;
   in {
-    nixosConfigurations = import ./hosts {inherit nixpkgs inputs lib;};
+    formatter = pkgs.alejandra;
+    
+    nixosConfigurations = {
+      donnan-stasj = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/configuration.nix
+          #./modules
+          #inputs.home-manager.nixosModules.home-manager
+          ##inputs.neovim-flake.homeManagerModules.default
+        ];
+      };
+    };
   };
     
   inputs = {

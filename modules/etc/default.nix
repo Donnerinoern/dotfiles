@@ -6,10 +6,9 @@
   lib,
   ...
 }: {
-  
+  #imports = [ inputs.neovim-flake.homeManagerModules.default ];
   config = {
     home-manager.users.${config'.username} = {
-      imports = [ inputs.neovim-flake.homeManagerModules.default ];
       programs = {
         git = {
           enable = true;

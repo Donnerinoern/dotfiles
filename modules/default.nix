@@ -1,6 +1,6 @@
 _: {
   imports = [
     ./gui
-    ./etc
+    #./etc
   ];
 }

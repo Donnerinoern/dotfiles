@@ -3,11 +3,10 @@
   inputs,
   lib,
   config,
-  config',
   ...
 }: {
   config = {
-    home-manager.users.${config'.username} = {
+    #home-manager.users.donnan = {
       programs.waybar = {
         enable = true;
         systemd.enable = true;
@@ -63,6 +62,6 @@
         };
         style = ./style.css;
       };
-    };
+    #};
   };
 }

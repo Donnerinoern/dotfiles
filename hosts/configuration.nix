@@ -1,6 +1,12 @@
-{ inputs, config, config', pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
+  imports = [
+    ./hardware-configuration.nix
+    ./home-manager.nix
+    #inputs.home-manager.nixosModules.home-manager
+  ];
+  
   # Bootloader.
   boot = {
     loader = {
@@ -14,7 +20,7 @@
   virtualisation.libvirtd.enable = true;
 
   networking = {
-    hostName = config'.hostname; # Define your hostname.
+    hostName = "donnan-stasj"; # Define your hostname.
     networkmanager.enable = true;
     wireless.enable = false;
   };
@@ -37,12 +43,7 @@
   
   nix = {
     settings = {
-      experimental-features = [
-        "flakes"
-        "nix-command"
-      ];
-      keep-outputs = true;
-      keep-derivations = true;
+      experimental-features = "nix-command flakes";
     };
   };
 
@@ -100,7 +101,7 @@
   '';
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${config'.username} = {
+  users.users.donnan = {
     isNormalUser = true;
     description = "Donnan"; # TODO: Encrypt my real name. Add it here.
     extraGroups = [ "networkmanager" "wheel" "input" ];
@@ -116,7 +117,7 @@
       ];
     };
     overlays = [
-      inputs.neovim-nightly-overlay.overlay
+      #inputs.neovim-nightly-overlay.overlay
       inputs.rust-overlay.overlays.default
       inputs.zig-overlay.overlays.default
     ];
@@ -155,7 +156,6 @@
     jetbrains.idea-ultimate
 
     vesktop
-    neovim
     rust-bin.stable.latest.default
     zigpkgs.master
   ];

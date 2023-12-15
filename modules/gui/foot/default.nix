@@ -3,11 +3,10 @@
   inputs,
   lib,
   config,
-  config',
   ...
 }: {
   config = {
-    home-manager.users.${config'.username} = {
+    #home-manager.users.donnan = {
       programs.foot = {
         enable = true;
         settings = {
@@ -16,6 +15,6 @@
           };
         };
       };
-    };
+    #};
   };
 }
