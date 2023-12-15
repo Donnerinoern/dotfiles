@@ -59,7 +59,29 @@
       settings = {
         vim = {
           #package = inputs.neovim-nightly-overlay.packages.default;
+          autopairs.enable = true;
+          comments.comment-nvim.enable = true;
+          dashboard.alpha.enable = true;
+          disableArrows = true;
+          filetree.nvimTree.enable = true;
+          filetree.nvimTree.git.enable = true;
+          git.enable = true;
+          presence.presence-nvim.enable = true;
+          telescope.enable = true;
+          terminal.toggleterm.enable = true;
+
+          theme = {
+            enable = true;
+            name = "onedark";
+          };
+
           languages = {
+            enableLSP = true;
+            markdown = {
+              enable = true;
+              glow.enable = true;
+            };
+            svelte.enable = true;
             nix.enable = true;
             zig.enable = true;
             rust = {
