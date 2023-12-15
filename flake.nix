@@ -16,9 +16,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/configuration.nix
-          #./modules
-          #inputs.home-manager.nixosModules.home-manager
-          ##inputs.neovim-flake.homeManagerModules.default
         ];
       };
     };

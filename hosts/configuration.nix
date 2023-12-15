@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     ./home-manager.nix
-    #inputs.home-manager.nixosModules.home-manager
   ];
   
   # Bootloader.
@@ -20,7 +19,7 @@
   virtualisation.libvirtd.enable = true;
 
   networking = {
-    hostName = "donnan-stasj"; # Define your hostname.
+    hostName = "donnan-stasj";
     networkmanager.enable = true;
     wireless.enable = false;
   };
@@ -117,7 +116,7 @@
       ];
     };
     overlays = [
-      #inputs.neovim-nightly-overlay.overlay
+      inputs.neovim-nightly-overlay.overlay
       inputs.rust-overlay.overlays.default
       inputs.zig-overlay.overlays.default
     ];
@@ -125,7 +124,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
     gamescope
        
     playerctl
