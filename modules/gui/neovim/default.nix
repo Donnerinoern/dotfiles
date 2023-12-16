@@ -29,6 +29,8 @@
           useSystemClipboard = true;
           autoIndent = true;
 
+          notes.todo-comments.enable = true;
+
           theme = {
             enable = true;
             name = "onedark";

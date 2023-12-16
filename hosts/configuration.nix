@@ -126,6 +126,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
     gamescope
+    ripgrep
+    fd
        
     playerctl
     hyprpaper
