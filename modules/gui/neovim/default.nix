@@ -40,10 +40,16 @@
           };
 
           visuals = {
+            enable = true;
             cursorline.enable = true;
-            indentBlankline.enable = true;
+            indentBlankline = {
+              enable = true;
+              eolChar = " ";
+              fillChar = " ";
+            };
             scrollBar.enable = true;
             nvimWebDevicons.enable = true;
+            highlight-undo.enable = true;
           };
 
           binds = {
