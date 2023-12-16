@@ -3,5 +3,6 @@ _: {
     ./hyprland
     ./waybar
     ./foot
+    ./neovim
   ];
 }
