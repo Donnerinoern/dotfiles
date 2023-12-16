@@ -145,7 +145,6 @@
     audacity
     
     spotify
-    obsidian
     webcord-vencord
     gimp
     neofetch
