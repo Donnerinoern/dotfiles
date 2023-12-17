@@ -160,7 +160,13 @@
     zigpkgs.master
   ];
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment = {
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      MOZ_USE_XINPUT2 = "1";
+      XDG_CURRENT_DESKTOP = "hyprland";
+    };
+  };
 
   fonts = {
     enableDefaultPackages = true;
