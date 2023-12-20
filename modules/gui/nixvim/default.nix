@@ -19,13 +19,16 @@
       clipboard = "unnamedplus";
       hlsearch = false;
       showmatch = true;
+      shiftwidth = 4;
+      tabstop = 4;
+      expandtab = true;
+      smoothscroll = true;
     };
-    keymaps = [
-      {
-        action = "<leader>";
-        key = "\\<space>";
-      }
-    ];
+
+    globals = {
+      mapleader = " ";
+    };
+
     colorschemes.melange.enable = true;
     luaLoader.enable = true;
     plugins = {
@@ -36,14 +39,17 @@
       };
       chadtree = {
         enable = true;
-        extraOptions = {
-            width = 10;
-          theme = {
-            textColourSet = "trapdoor";
-          };
+        view.width = 35; 
+        theme = {
+          textColourSet = "trapdoor";
         };
+        keymap.openFileFolder.tertiary = ["<leader>t" "middlemouse"];
       };
-      coq-nvim.enable = true;
+      coq-nvim = {
+        enable = true;
+        installArtifacts = true;
+        recommendedKeymaps = true;
+      };
       telescope.enable = true;
       lualine.enable = true;
       bufferline.enable = true;
@@ -53,8 +59,42 @@
       illuminate.enable = true;
       cursorline.enable = true;
       indent-blankline.enable = true;
-      treesitter.enable = true;
-      lsp.enable = true;
+      leap.enable = true;
+      fidget.enable = true;
+      treesitter = {
+        enable = true;
+        indent = true;
+        incrementalSelection.enable = true;
+        ensureInstalled = [
+          "lua"
+          "rust"
+          "markdown"
+          "markdown-inline"
+          "c"
+          "cpp"
+          "zig"
+          "nix"
+          "html"
+          "css"
+          "javascript"
+          "typescript"
+          "svelte"
+          "sql"
+          "go"
+        ];
+      };
+      lsp = {
+        enable = true;
+        servers = {
+          rust-analyzer.enable = true;
+          nil_ls.enable = true;
+          clangd.enable = true;
+          svelte.enable = true;
+          zls.enable = true;
+          lua-ls.enable = true;
+          gopls.enable = true;
+        }
+      };
     };
   };
 }
