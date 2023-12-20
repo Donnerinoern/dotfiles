@@ -86,14 +86,18 @@
       lsp = {
         enable = true;
         servers = {
-          rust-analyzer.enable = true;
+          rust-analyzer = {
+            enable = true;
+            installRustc = false;
+            installCargo = false;
+          };
           nil_ls.enable = true;
           clangd.enable = true;
           svelte.enable = true;
           zls.enable = true;
           lua-ls.enable = true;
           gopls.enable = true;
-        }
+        };
       };
     };
   };
