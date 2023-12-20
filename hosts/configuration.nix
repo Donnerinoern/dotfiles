@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.chaotic.nixosModules.default
     ./hardware-configuration.nix
     ./home-manager.nix
   ];
@@ -122,9 +123,12 @@
     ];
   };
 
+  chaotic.mesa-git.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    glxinfo
     go
     gamescope
     ripgrep

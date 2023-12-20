@@ -3,6 +3,7 @@ _: {
     ./hyprland
     ./waybar
     ./foot
-    ./neovim
+    #./neovim
+    ./nixvim
   ];
 }

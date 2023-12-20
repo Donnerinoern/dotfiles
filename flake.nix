@@ -31,7 +31,7 @@
     
     hyprland.url = "github:hyprwm/Hyprland";
 
-    xdg-desktop-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     
     rust-overlay.url = "github:oxalica/rust-overlay";
     
@@ -40,5 +40,10 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     
     neovim-flake.url = "github:NotAShelf/neovim-flake";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

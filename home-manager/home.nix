@@ -8,6 +8,7 @@
 }: {
   imports = [ 
     inputs.neovim-flake.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
     ../modules
   ];
 
