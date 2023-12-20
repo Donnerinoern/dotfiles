@@ -29,6 +29,29 @@
       mapleader = " ";
     };
 
+    keymaps = [
+      {
+        action = "vim.cmd.CHADopen";
+        lua = true;
+        key = "<leader>v";
+      }
+      {
+        action = "vim.cmd.bnext";
+        lua = true;
+        key = "<leader>n";
+      }
+      {
+        action = "vim.cmd.bprev";
+        lua = true;
+        key = "<leader>p";
+      }
+      {
+        action = "vim.cmd.bdelete";
+        lua = true;
+        key = "<leader>q";
+      }
+    ];
+
     colorschemes.melange.enable = true;
     luaLoader.enable = true;
     plugins = {
@@ -41,7 +64,7 @@
         enable = true;
         view.width = 35; 
         theme = {
-          textColourSet = "trapdoor";
+          textColourSet = "nerdtree_syntax_dark";
         };
         keymap.openFileFolder.tertiary = ["<leader>t" "middlemouse"];
       };
@@ -50,7 +73,15 @@
         installArtifacts = true;
         recommendedKeymaps = true;
       };
-      telescope.enable = true;
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>fg" = "live_grep";
+          "<leader>fb" = "buffers";
+          "<leader>fh" = "help_tags";
+        };
+      };
       lualine.enable = true;
       bufferline.enable = true;
       nvim-autopairs.enable = true;
@@ -60,6 +91,7 @@
       cursorline.enable = true;
       indent-blankline.enable = true;
       leap.enable = true;
+      which-key.enable = true;
       fidget.enable = true;
       treesitter = {
         enable = true;
