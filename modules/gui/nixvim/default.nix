@@ -72,6 +72,7 @@
         enable = true;
         installArtifacts = true;
         recommendedKeymaps = true;
+        alwaysComplete = true;
       };
       telescope = {
         enable = true;
@@ -83,7 +84,27 @@
         };
       };
       lualine.enable = true;
-      bufferline.enable = true;
+      bufferline = {
+        enable = true;
+        offsets = [
+          { 
+            filetype = "CHADTree";
+            text = "File Explorer";
+            text_align = "center";
+            separator = true;
+          }
+        ];
+      };
+      # barbar = {
+      #   enable = true;
+      #   sidebarFiletypes = {
+      #     CHADTree = true;
+      #     options = {
+      #       text = "File Explorer";
+      #       event = "BufWinLeave";
+      #     };
+      #   };
+      # };
       nvim-autopairs.enable = true;
       todo-comments.enable = true;
       nvim-colorizer.enable = true;
