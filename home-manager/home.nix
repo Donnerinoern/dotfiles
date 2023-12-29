@@ -9,6 +9,7 @@
   imports = [ 
     inputs.neovim-flake.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
+    inputs.ags.homeManagerModules.default
     ../modules
   ];
 
@@ -19,6 +20,11 @@
   };
   
   programs = {
+
+    ags = {
+      enable = true;
+      configDir = ../modules/gui/ags;
+    };
   
     git = {
       enable = true;
