@@ -52,7 +52,7 @@
       }
     ];
 
-    colorschemes.melange.enable = true;
+    colorschemes.gruvbox.enable = true;
     luaLoader.enable = true;
     plugins = {
       comment-nvim.enable = true;
@@ -68,17 +68,14 @@
         };
         keymap.openFileFolder.tertiary = ["<leader>t" "middlemouse"];
       };
-      # coq-nvim = {
-      #   enable = true;
-      #   installArtifacts = true;
-      #   recommendedKeymaps = true;
-      #   alwaysComplete = true;
-      #   autoStart = true;
-      # };
-      nvim-cmp = {
+      coq-nvim = {
         enable = true;
-        
+        installArtifacts = true;
+        recommendedKeymaps = true;
+        alwaysComplete = true;
+        autoStart = true;
       };
+      
       telescope = {
         enable = true;
         keymaps = {
