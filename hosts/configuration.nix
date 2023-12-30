@@ -140,7 +140,6 @@
     hyprpaper
     grim
     slurp
-    ranger
     nwg-look
     wl-clipboard
 
@@ -149,12 +148,9 @@
 
     nodejs
     sqlite
-    audacity
     
     spotify
-    webcord-vencord
     gimp
-    neofetch
     bun
     python3
     prismlauncher

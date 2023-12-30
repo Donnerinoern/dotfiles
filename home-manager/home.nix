@@ -21,6 +21,18 @@
   
   programs = {
 
+    lf = {
+      enable = true;
+    };
+
+    nnn = {
+      enable = true;
+    };
+
+    hyfetch = {
+      enable = true;
+    };
+
     ags = {
       enable = true;
       configDir = ../modules/gui/ags;
