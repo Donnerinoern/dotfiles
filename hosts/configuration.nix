@@ -128,6 +128,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    clifm
+    unzip
     xwaylandvideobridge
     armcord
     glxinfo
@@ -168,6 +170,7 @@
       NIXOS_OZONE_WL = "1";
       MOZ_USE_XINPUT2 = "1";
       XDG_CURRENT_DESKTOP = "hyprland";
+      EDITOR = "nvim";
     };
   };
 
@@ -217,10 +220,12 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  #networking.firewall.allowedTCPPorts = [
-  #];
-  #networking.firewall.allowedUDPPorts = [
-  #];
+  networking.firewall.allowedTCPPorts = [
+    25565
+  ];
+  networking.firewall.allowedUDPPorts = [
+    25565
+  ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

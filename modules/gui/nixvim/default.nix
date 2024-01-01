@@ -7,6 +7,9 @@
 }: {
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
     options = {
       number = true;
       relativenumber = true;
@@ -14,8 +17,9 @@
       scrolloff = 5;
       ignorecase = true;
       smartcase = true;
-      autoindent = true;
-      smartindent = true;
+      # autoindent = true;
+      # smartindent = true;
+      cindent = true;
       clipboard = "unnamedplus";
       hlsearch = false;
       showmatch = true;

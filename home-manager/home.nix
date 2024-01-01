@@ -21,11 +21,15 @@
   
   programs = {
 
-    lf = {
-      enable = true;
-    };
+    # lf = {
+    #   enable = true;
+    # };
 
-    nnn = {
+    # nnn = {
+    #   enable = true;
+    # };
+
+    yazi = {
       enable = true;
     };
 
@@ -44,11 +48,6 @@
       userEmail = "72634505+Donnerinoern@users.noreply.github.com";
     };
       
-    vscode = {
-      enable = true;
-      package = pkgs.vscodium;
-    };
-
     fuzzel = {
       enable = true;
       settings = {
@@ -77,6 +76,7 @@
     btop.enable = true;
     firefox.enable = true;
     mpv.enable = true;
+    fzf.enable = true;
   };
     
   services = {
