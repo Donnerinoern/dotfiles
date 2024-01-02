@@ -42,7 +42,7 @@
     neovim-flake.url = "github:NotAShelf/neovim-flake";
 
     nixvim = {
-      url = "github:nix-community/nixvim/f2e808a519d9526cf7df9047f20f71c323c21ac9";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

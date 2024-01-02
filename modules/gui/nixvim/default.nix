@@ -17,7 +17,7 @@
       scrolloff = 5;
       ignorecase = true;
       smartcase = true;
-      # autoindent = true;
+      autoindent = true;
       # smartindent = true;
       cindent = true;
       clipboard = "unnamedplus";
@@ -72,12 +72,20 @@
         };
         keymap.openFileFolder.tertiary = ["<leader>t" "middlemouse"];
       };
-      coq-nvim = {
+      # coq-nvim = {
+      #   enable = true;
+      #   installArtifacts = true;
+      #   recommendedKeymaps = true;
+      #   alwaysComplete = true;
+      #   autoStart = true;
+      # };
+      nvim-cmp = {
         enable = true;
-        installArtifacts = true;
-        recommendedKeymaps = true;
-        alwaysComplete = true;
-        autoStart = true;
+        completion = {
+          autocomplete = [
+            "TextChanged"
+          ];
+        };
       };
       
       telescope = {
