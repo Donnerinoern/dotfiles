@@ -54,6 +54,11 @@
         lua = true;
         key = "<leader>q";
       }
+      {
+        action = "vim.cmd.w";
+        lua = true;
+        key = "<Cr>s";
+      }
     ];
 
     colorschemes.gruvbox.enable = true;
