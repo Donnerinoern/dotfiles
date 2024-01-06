@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.chaotic.nixosModules.default
+    inputs.hyprland.nixosModules.default
     ./hardware-configuration.nix
     ./home-manager.nix
   ];
@@ -44,6 +45,8 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
   };
 
@@ -68,19 +71,20 @@
   # Configure console keymap
   console.keyMap = "no";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+    udisks2.enable = true;
+    fstrim.enable = true;
+    printing.enable = true;
   };
-  services.udisks2.enable = true;
-  services.fstrim.enable = true;
+  
   security.polkit.enable = true;
   
   services.greetd = {
@@ -199,6 +203,7 @@
     
     hyprland = {
       enable = true;
+      portalPackage = inputs.hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland;
     };
     
     ssh.startAgent = true;
