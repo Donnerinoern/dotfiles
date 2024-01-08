@@ -109,7 +109,8 @@
     isNormalUser = true;
     description = "Donnan"; # TODO: Encrypt my real name. Add it here.
     extraGroups = [ "networkmanager" "wheel" "input" ];
-    shell = pkgs.fish;
+    # shell = pkgs.fish;
+    shell = pkgs.nushell;
   };
 
   # Allow unfree packages

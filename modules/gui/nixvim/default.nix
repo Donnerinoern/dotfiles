@@ -57,7 +57,7 @@
       {
         action = "vim.cmd.w";
         lua = true;
-        key = "<Cr>s";
+        key = "<c-s>s";
       }
     ];
 

@@ -21,13 +21,7 @@
   
   programs = {
 
-    # lf = {
-    #   enable = true;
-    # };
-
-    # nnn = {
-    #   enable = true;
-    # };
+    nushell.enable = true;
 
     yazi = {
       enable = true;
