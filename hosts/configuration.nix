@@ -16,6 +16,7 @@
     };
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.kernelModules = [ "kvm-amd" "amdgpu" ];
+    supportedFilesystems = [ "bcachefs" ];
   };
   
   virtualisation.libvirtd.enable = true;
@@ -74,6 +75,7 @@
   # Enable sound with pipewire.
   security.rtkit.enable = true;
   services = {
+    dbus.implementation = "broker";
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -109,7 +111,6 @@
     isNormalUser = true;
     description = "Donnan"; # TODO: Encrypt my real name. Add it here.
     extraGroups = [ "networkmanager" "wheel" "input" ];
-    # shell = pkgs.fish;
     shell = pkgs.nushell;
   };
 
@@ -133,10 +134,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    fastfetch
     age
     unzip
-    xwaylandvideobridge
-    armcord
+    # xwaylandvideobridge
+    # armcord
     glxinfo
     go
     gamescope
@@ -151,7 +153,7 @@
     wl-clipboard
 
     the-powder-toy
-    protontricks
+    # protontricks
 
     nodejs
     sqlite
@@ -160,11 +162,10 @@
     gimp
     bun
     python3
-    prismlauncher
 
-    zoom-us
     jetbrains.idea-ultimate
 
+    # zoom-us
     vesktop
     rust-bin.stable.latest.default
     zigpkgs.master
@@ -173,7 +174,6 @@
   environment = {
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
-      MOZ_USE_XINPUT2 = "1";
       XDG_CURRENT_DESKTOP = "hyprland";
       EDITOR = "nvim";
     };
@@ -183,9 +183,8 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       roboto
-      source-code-pro
       iosevka
-      nerdfonts
+      (nerdfonts.override { fonts = [ "Iosevka" ]; })
      ];
   };
 
@@ -209,7 +208,7 @@
     
     ssh.startAgent = true;
     
-    fish.enable = true;
+    # fish.enable = true;
   };
   
   # Some programs need SUID wrappers, can be configured further or are

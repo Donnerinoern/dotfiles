@@ -66,7 +66,7 @@
       };
     };
 
-    htop.enable = true;
+    # htop.enable = true;
     btop.enable = true;
     firefox.enable = true;
     mpv.enable = true;
