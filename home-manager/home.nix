@@ -16,7 +16,7 @@
   home = {
     username = "donnan";
     homeDirectory = "/home/donnan";
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
   
   programs = {
