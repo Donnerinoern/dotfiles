@@ -22,7 +22,7 @@
   virtualisation.libvirtd.enable = true;
 
   networking = {
-    hostName = "donnan-stasj";
+    hostName = "brutus";
     networkmanager.enable = true;
     wireless.enable = false;
   };

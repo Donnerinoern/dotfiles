@@ -12,7 +12,7 @@
     formatter = pkgs.alejandra;
     
     nixosConfigurations = {
-      donnan-stasj = nixpkgs.lib.nixosSystem {
+      brutus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/configuration.nix
