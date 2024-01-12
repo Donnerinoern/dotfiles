@@ -16,7 +16,7 @@
   home = {
     username = "donnan";
     homeDirectory = "/home/donnan";
-    stateVersion = "23.11";
+    stateVersion = "24.05";
   };
   
   programs = {
@@ -56,13 +56,6 @@
           selection-text = "ffffffff";
         };
         border.width = "2";
-      };
-    };
-
-    helix = {
-      enable = true;
-      settings = {
-        theme = "merionette";
       };
     };
 
