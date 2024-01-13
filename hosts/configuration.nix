@@ -46,6 +46,7 @@
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
       substituters = ["https://hyprland.cachix.org"];
       trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
@@ -72,8 +73,11 @@
   # Configure console keymap
   console.keyMap = "no";
 
-  # Enable sound with pipewire.
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
+
   services = {
     dbus.implementation = "broker";
     pipewire = {
@@ -84,10 +88,8 @@
     };
     udisks2.enable = true;
     fstrim.enable = true;
-    printing.enable = true;
+    # printing.enable = true;
   };
-  
-  security.polkit.enable = true;
   
   services.greetd = {
     enable = true;
@@ -118,9 +120,9 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
+      # permittedInsecurePackages = [
+      #   "electron-25.9.0"
+      # ];
     };
     overlays = [
       inputs.neovim-nightly-overlay.overlay

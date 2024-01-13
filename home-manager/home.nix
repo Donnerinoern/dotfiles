@@ -27,10 +27,6 @@
       enable = true;
     };
 
-    hyfetch = {
-      enable = true;
-    };
-
     ags = {
       enable = true;
       configDir = ../modules/gui/ags;
