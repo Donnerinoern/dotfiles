@@ -113,7 +113,8 @@
     isNormalUser = true;
     description = "Donnan"; # TODO: Encrypt my real name. Add it here.
     extraGroups = [ "networkmanager" "wheel" "input" ];
-    shell = pkgs.nushell;
+    # shell = pkgs.nushell;
+    shell = pkgs.fish;
   };
 
   # Allow unfree packages
@@ -154,7 +155,7 @@
     nwg-look
     wl-clipboard
 
-    the-powder-toy
+    # the-powder-toy
     # protontricks
 
     nodejs
@@ -191,6 +192,7 @@
   };
 
   programs = {
+    fish.enable = true;
     steam = {
       enable = true;
       remotePlay.openFirewall = true;

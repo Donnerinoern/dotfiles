@@ -60,6 +60,8 @@
     firefox.enable = true;
     mpv.enable = true;
     fzf.enable = true;
+
+    fish.enable = true;
   };
     
   services = {

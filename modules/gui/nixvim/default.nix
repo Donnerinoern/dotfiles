@@ -69,6 +69,7 @@
       alpha = {
         enable = true;
         iconsEnabled = true;
+        theme = "dashboard";
       };
       chadtree = {
         enable = true;
