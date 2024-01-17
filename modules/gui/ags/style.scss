@@ -7,9 +7,14 @@ $btn-active-border-color: #e46b25;
 $text-color: #ebefbf;
 
 * {
-    font-family: "Iosevka", "Font Awesome", sans-serif;
+    font-family: "Iosevka", "Material Symbols Rounded", sans-serif;
     font-weight: 700;
     font-size: 14px;
+}
+
+.icon {
+    font-size: 17px;
+    font-weight: 600;
 }
 
 #bar {

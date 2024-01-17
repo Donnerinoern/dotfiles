@@ -39,19 +39,20 @@ const Volume = () => Widget.Box({
     class_name: 'volume',
     spacing: 4,
     children: [
-        Widget.Icon().hook(Audio, self => {
+        Widget.Label().hook(Audio, self => {
             if (!Audio.speaker)
                 return;
 
             const icon = [
-                [101, 'overamplified'],
-                [67, 'high'],
-                [34, 'medium'],
-                [1, 'low'],
-                [0, 'muted'],
+                [101, '\ue98e'],
+                [67, '\ue050'],
+                [34, '\ue04d'],
+                [1, '\ue04e'],
+                [0, '\ue710'],
             ].find(([threshold]) => threshold <= Audio.speaker?.volume * 100)[1];
 
-            self.icon = `audio-volume-${icon}-symbolic`;
+            self.label = `${icon}`;
+            self.class_name = 'icon';
         }, 'speaker-changed'),
         Widget.Label().hook(Audio, self => {
             self.label = `${Math.round(Audio.speaker?.volume * 100 || 0)}%`;
@@ -103,28 +104,32 @@ const memory = Variable(0, {
 });
 
 const CPU = () => Widget.Box({
+    spacing: 4,
     children: [
         Widget.Label({
             label: cpu.bind().transform(value => `${value}%`)
         }),
-        Widget.Icon('audio-volume-high-symbolic'),
+        Widget.Label({
+            label: '\ue30d',
+            class_name: 'icon'
+        }),
     ],
 });
 
 const Memory = () => Widget.Box({
+    spacing: 4,
     children: [
         Widget.Label({
             label: memory.bind().transform(value => `${value}%`)
         }),
-        Widget.Icon('audio-volume-low-symbolic'),
-    ],
-});
-
-const CPUAndMemory = () => Widget.Box({
-    spacing: 8,
-    children: [
-        CPU(),
-        Memory()
+        // Widget.Label({
+        //     label: '\ue322',
+        //     class_name: 'icon'
+        // }),
+        Widget.Label({
+            label: '\uf7a3',
+            class_name: 'icon'
+        }),
     ],
 });
 
@@ -150,7 +155,8 @@ const Right = () => Widget.Box({
     children: [
         Volume(),
         Network(),
-        CPUAndMemory(),
+        CPU(),
+        Memory(),
         ClockAndDate(),
     ],
 });
@@ -158,7 +164,7 @@ const Right = () => Widget.Box({
 const Bar = (monitor = 0) => Widget.Window({
     name: 'bar',
     monitor,
-    margins: [4, 8, 0, 8],
+    margins: [8, 8, 0, 8],
     anchor: ['top', 'left', 'right'],
     exclusivity: 'exclusive',
     child: Widget.CenterBox({
