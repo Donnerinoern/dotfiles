@@ -17,6 +17,7 @@
       ];
       
       exec-once = [
+        "ags"
         "hyprpaper"
         "firefox"
         "vencorddesktop"
@@ -131,7 +132,7 @@
       ];
     };
     extraConfig = ''
-      bind = $mod SHIFT,S,exec, grim -g "$(slurp -w 0)" - | wl-copy
+      bind = $mod SHIFT,S,exec, grim -g "$(slurp -w 0)" - | wl-copy -t image/png
     '';
   };
 }

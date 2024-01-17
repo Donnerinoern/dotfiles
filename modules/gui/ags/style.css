@@ -1,0 +1,46 @@
+* {
+  font-family: "Iosevka", "Font Awesome", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#bar {
+  background-color: #540804;
+  border: 2px solid #81171b;
+  color: #ebefbf;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+}
+
+#leftbox {
+  margin-left: 0px;
+}
+
+#rightbox {
+  margin-right: 8px;
+}
+
+.workspaces button {
+  margin-right: 2px;
+  border-radius: 10px;
+  box-shadow: inset 0 -3px transparent;
+  background: #9c1c20;
+  color: #ebefbf;
+  border: 2px solid #8b181c;
+}
+.workspaces button.focused {
+  background: #c85919;
+  background-color: #c85919;
+  border: 2px solid #e46b25;
+}
+.workspaces button.focused:hover {
+  background: #9c1c20;
+  box-shadow: inset 3px 3px 4px 3px #c85919, inset -3px -3px 4px 3px #c85919;
+}
+.workspaces button:hover {
+  box-shadow: inset 3px 3px 4px 3px #c85919, inset -3px -3px 4px 3px #c85919;
+  border: 2px solid #e46b25;
+}
+
+/*# sourceMappingURL=style.css.map */

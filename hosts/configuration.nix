@@ -137,6 +137,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    material-symbols-unstable
+    material-design-icons
+    dart-sass
     fastfetch
     age
     unzip

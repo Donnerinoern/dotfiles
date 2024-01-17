@@ -1,0 +1,57 @@
+$primary-color: #540804;
+$secondary-color: #81171b;
+$button-color: #9c1c20;
+$btn-border-color: #8b181c;
+$btn-active-color: #c85919;
+$btn-active-border-color: #e46b25;
+$text-color: #ebefbf;
+
+* {
+    font-family: "Iosevka", "Font Awesome", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#bar {
+    background-color: $primary-color;
+    border: 2px solid $secondary-color;
+    color: $text-color;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 10px;
+}
+
+#leftbox {
+    margin-left: 0px;
+}
+
+#rightbox {
+    margin-right: 8px;
+}
+
+.workspaces {
+    button {
+        margin-right: 2px;
+        border-radius: 10px;
+        box-shadow: inset 0 -3px transparent;
+        background: $button-color;
+        color: $text-color;
+        border: 2px solid $btn-border-color;
+    }
+
+    button.focused {
+        background: $btn-active-color;
+        background-color: $btn-active-color;
+        border: 2px solid $btn-active-border-color;
+    }
+
+    button.focused:hover {
+        background: $button-color;
+        box-shadow: inset 3px 3px 4px 3px $btn-active-color, inset -3px -3px 4px 3px $btn-active-color;
+    }
+
+    button:hover {
+        box-shadow: inset 3px 3px 4px 3px $btn-active-color, inset -3px -3px 4px 3px $btn-active-color;
+        border: 2px solid $btn-active-border-color;
+    }
+}

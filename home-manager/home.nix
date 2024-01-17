@@ -21,7 +21,7 @@
   
   programs = {
 
-    nushell.enable = true;
+    # nushell.enable = true;
 
     yazi = {
       enable = true;
