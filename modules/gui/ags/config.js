@@ -30,8 +30,9 @@ const Workspaces = () => Widget.EventBox({
 
 const ClockAndDate = () => Widget.Label({
     class_name: 'clock',
+    // tooltip_text: ,
     setup: self => self
-        .poll(1000, self => execAsync(['date', '+%A\ \|\ %D\ \|\ %R'])
+        .poll(1000, self => execAsync(['date', '+%A\ \|\ %d/%m/%y\ \|\ %R'])
             .then(date => self.label = date)),
 });
 
@@ -62,7 +63,7 @@ const Volume = () => Widget.Box({
 
 const ipAddr = Variable(0, {
     poll: [
-        2000,
+        60000,
         'nmcli device show enp5s0',
         out => out
             .split('\n')
@@ -99,7 +100,8 @@ const memory = Variable(0, {
                     .find(line => line.includes('Mem:'))
                     .split(/\s+/)
                     .splice(1, 2),
-            )*100),
+            )*100
+        ),
     ],
 });
 
@@ -122,10 +124,6 @@ const Memory = () => Widget.Box({
         Widget.Label({
             label: memory.bind().transform(value => `${value}%`)
         }),
-        // Widget.Label({
-        //     label: '\ue322',
-        //     class_name: 'icon'
-        // }),
         Widget.Label({
             label: '\uf7a3',
             class_name: 'icon'

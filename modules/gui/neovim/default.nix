@@ -16,7 +16,7 @@
           dashboard.alpha.enable = true;
           disableArrows = true;
           filetree.nvimTree = {
-            enable = true;
+            enable = false;
             git.enable = true;
             renderer.indentMarkers.enable = true;
           };
@@ -33,7 +33,8 @@
 
           theme = {
             enable = true;
-            name = "onedark";
+            name = "gruvbox";
+            style = "dark";
           };
 
           ui = {
