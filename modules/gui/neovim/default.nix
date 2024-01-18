@@ -84,10 +84,7 @@
           languages = {
             enableLSP = true;
             enableTreesitter = true;
-            markdown = {
-              enable = true;
-              glow.enable = true;
-            };
+            markdown.enable = true;
             svelte.enable = true;
             nix.enable = true;
             zig.enable = true;
@@ -102,7 +99,7 @@
             };
             html.enable = true;
             ts.enable = true;
-            sql.enable = true;
+            # sql.enable = true;
           };
         };
       };

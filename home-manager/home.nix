@@ -9,6 +9,7 @@
   imports = [ 
     inputs.neovim-flake.homeManagerModules.default
     inputs.ags.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
     ../modules
   ];
 
@@ -17,11 +18,15 @@
     homeDirectory = "/home/donnan";
     stateVersion = "24.05";
   };
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
   
   programs = {
-
-    # nushell.enable = true;
-
     yazi = {
       enable = true;
     };
@@ -54,17 +59,14 @@
       };
     };
 
-    # htop.enable = true;
     btop.enable = true;
     firefox.enable = true;
     mpv.enable = true;
     fzf.enable = true;
-
     fish.enable = true;
   };
     
   services = {
-  
     fnott = {
       enable = true;
       configFile = ./fnott.ini;

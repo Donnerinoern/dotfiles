@@ -137,6 +137,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    nvtop
     dart-sass
     fastfetch
     age
@@ -209,7 +210,6 @@
     
     hyprland = {
       enable = true;
-      portalPackage = inputs.hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland;
     };
     
     ssh.startAgent = true;
