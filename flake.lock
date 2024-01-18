@@ -1260,15 +1260,15 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1705573285,
-        "narHash": "sha256-LAAD4zjyVWB3V2WAR1hdZSQ+Mg/4UXUBUO6rIEIb3wk=",
-        "owner": "Donnerinoern",
+        "lastModified": 1705575293,
+        "narHash": "sha256-Hx4WbqU3xPIzdcoF/AOoelvT2Z6FIte48ZK1214tEwk=",
+        "owner": "NotAShelf",
         "repo": "neovim-flake",
-        "rev": "b2cc82bad4ed1a2f30639ca11374cc7043b36d29",
+        "rev": "4ded86d1ff4b846bf04822d68c748f44abf8b26d",
         "type": "github"
       },
       "original": {
-        "owner": "Donnerinoern",
+        "owner": "NotAShelf",
         "repo": "neovim-flake",
         "type": "github"
       }
@@ -2746,11 +2746,11 @@
         "nixpkgs": "nixpkgs_11"
       },
       "locked": {
-        "lastModified": 1705537397,
-        "narHash": "sha256-hpUCL2ZGDsJa9pPBEO3jWH3oB5UTESJdsJBXRG3kvh4=",
+        "lastModified": 1705579749,
+        "narHash": "sha256-7TY+f49xVYQ0itRFU3MgwdPlTnz4xAky9Jlxg1IGk5I=",
         "owner": "mitchellh",
         "repo": "zig-overlay",
-        "rev": "fb53fe0fe29e69645281163cc63a0d20a627c17f",
+        "rev": "2e0a594803645d01c587388e1edede00b79a1032",
         "type": "github"
       },
       "original": {

@@ -15,19 +15,25 @@
           comments.comment-nvim.enable = true;
           dashboard.alpha.enable = true;
           disableArrows = true;
-          filetree.nvimTree = {
-            enable = false;
-            git.enable = true;
-            renderer.indentMarkers.enable = true;
-          };
+          # filetree.nvimTree = {
+          #   enable = false;
+          #   git.enable = true;
+          #   renderer.indentMarkers.enable = true;
+          # };
           git.enable = true;
+          git.gitsigns.enable = true;
           telescope.enable = true;
           statusline.lualine.enable = true;
-          tabline.nvimBufferline.enable = true;
+          tabline.nvimBufferline = {
+            enable = true;
+            mappings.closeCurrent = "<leader>bq";
+          };
           terminal.toggleterm.enable = true;
           hideSearchHighlight = true;
           useSystemClipboard = true;
           autoIndent = true;
+
+          autocomplete.enable = true;
 
           notes.todo-comments.enable = true;
 
@@ -40,6 +46,10 @@
           ui = {
             colorizer.enable = true;
             illuminate.enable = true;
+            borders = {
+              enable = true;
+              globalStyle = "double";
+            };
           };
 
           visuals = {
@@ -51,13 +61,24 @@
               fillChar = " ";
             };
             scrollBar.enable = true;
+            fidget-nvim.enable = true;
             nvimWebDevicons.enable = true;
-            highlight-undo.enable = true;
+            highlight-undo = {
+              enable = true;
+              duration = 1000;
+            };
+            smoothScroll.enable = true;
           };
 
           binds = {
             cheatsheet.enable = true;
             whichKey.enable = true;
+          };
+
+          snippets.vsnip.enable = true;
+
+          treesitter = {
+            autotagHtml = true;
           };
 
           languages = {
@@ -77,11 +98,11 @@
             };
             clang = {
               enable = true;
-              lsp = {
-                enable = true;
-                server = "clangd";
-              };
+              lsp.server = "ccls";
             };
+            html.enable = true;
+            ts.enable = true;
+            sql.enable = true;
           };
         };
       };
