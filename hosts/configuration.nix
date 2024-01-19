@@ -140,7 +140,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
-    inputs.nixpkgs.x86_64-linux.default
+    inputs.nixpkgs.nh.x86_64-linux.default
     nvtop
     dart-sass
     fastfetch
