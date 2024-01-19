@@ -92,7 +92,7 @@
             };
             clang = {
               enable = true;
-              lsp.server = "ccls";
+              lsp.server = "clangd";
             };
             html.enable = true;
             ts.enable = true;
