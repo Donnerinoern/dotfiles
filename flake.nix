@@ -39,7 +39,7 @@
       
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     
-    neovim-flake.url = "github:NotAShelf/neovim-flake";
+    neovim-flake.url = "github:Donnerinoern/neovim-flake";
 
     ags.url = "github:Aylur/ags";
   };

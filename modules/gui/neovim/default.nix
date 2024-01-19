@@ -15,11 +15,6 @@
           comments.comment-nvim.enable = true;
           dashboard.alpha.enable = true;
           disableArrows = true;
-          # filetree.nvimTree = {
-          #   enable = false;
-          #   git.enable = true;
-          #   renderer.indentMarkers.enable = true;
-          # };
           git.enable = true;
           git.gitsigns.enable = true;
           telescope.enable = true;
@@ -31,7 +26,6 @@
           terminal.toggleterm.enable = true;
           hideSearchHighlight = true;
           useSystemClipboard = true;
-          autoIndent = true;
 
           autocomplete.enable = true;
 
@@ -57,8 +51,11 @@
             cursorline.enable = true;
             indentBlankline = {
               enable = true;
-              eolChar = " ";
-              fillChar = " ";
+              eolChar = null;
+              fillChar = null;
+              scope = {
+                enabled = true;
+              };
             };
             scrollBar.enable = true;
             fidget-nvim.enable = true;
@@ -68,6 +65,10 @@
               duration = 1000;
             };
             smoothScroll.enable = true;
+          };
+
+          utility = {
+            surround.enable = true;
           };
 
           binds = {

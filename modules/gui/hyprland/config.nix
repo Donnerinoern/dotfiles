@@ -23,6 +23,10 @@
         "vencorddesktop"
         "foot -s"
       ];
+
+      env = [
+        "$BROWSER, firefox"
+      ];
       
       input = {
         kb_layout = "no";
