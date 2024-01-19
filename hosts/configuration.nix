@@ -2,8 +2,13 @@
 
 {
   imports = [
-    inputs.chaotic.nixosModules.default
     inputs.hyprland.nixosModules.default
+    inputs.nh.nixosModules.default
+    {
+      nh = {
+        enable = true;
+      };
+    }
     ./hardware-configuration.nix
     ./home-manager.nix
   ];
@@ -132,11 +137,10 @@
     ];
   };
 
-  chaotic.mesa-git.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    inputs.nixpkgs.x86_64-linux.default
     nvtop
     dart-sass
     fastfetch
@@ -181,6 +185,8 @@
       NIXOS_OZONE_WL = "1";
       XDG_CURRENT_DESKTOP = "hyprland";
       EDITOR = "nvim";
+      BROWSER = "firefox";
+      FLAKE = "/home/donnan/nixos";
     };
   };
 

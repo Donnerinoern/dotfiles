@@ -31,8 +31,6 @@
     
     hyprland.url = "github:hyprwm/Hyprland";
 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    
     rust-overlay.url = "github:oxalica/rust-overlay";
     
     zig-overlay.url = "github:mitchellh/zig-overlay";
@@ -42,5 +40,10 @@
     neovim-flake.url = "github:Donnerinoern/neovim-flake";
 
     ags.url = "github:Aylur/ags";
+
+    nh = {
+      url = "github:viperML/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
