@@ -26,7 +26,6 @@
           terminal.toggleterm.enable = true;
           hideSearchHighlight = true;
           useSystemClipboard = true;
-
           autocomplete.enable = true;
 
           notes.todo-comments.enable = true;
@@ -53,9 +52,6 @@
               enable = true;
               eolChar = null;
               fillChar = null;
-              scope = {
-                enabled = true;
-              };
             };
             scrollBar.enable = true;
             fidget-nvim.enable = true;

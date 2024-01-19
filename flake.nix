@@ -35,7 +35,7 @@
     
     zig-overlay.url = "github:mitchellh/zig-overlay";
       
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     
     neovim-flake.url = "github:Donnerinoern/neovim-flake";
 
