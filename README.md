@@ -4,7 +4,7 @@ This is my current NixOS configuration. I'm planning on refactoring and restruct
 
 ## Credits
 
-This is a list of people that helped me, or people that I learned from.
+This is a list of people that either helped me directly, or people that I learned from by looking at their config.
 
 - [NotAShelf](https://github.com/NotAShelf)
 - [jacekpoz](https://codeberg.org/jacekpoz)
