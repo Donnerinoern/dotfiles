@@ -20,7 +20,7 @@
         "ags"
         "hyprpaper"
         "firefox"
-        "vencorddesktop"
+        "vesktop"
         "foot -s"
       ];
 
