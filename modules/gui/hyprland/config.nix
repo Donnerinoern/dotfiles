@@ -12,10 +12,6 @@
         "DP-2,1920x1080@144,2560x0,auto"
       ];
     
-      # workspace = [
-      #   "monitor:DP-2,name:Alt,default=true"
-      # ];
-      
       exec-once = [
         "ags"
         "hyprpaper"
@@ -24,10 +20,6 @@
         "foot -s"
       ];
 
-      env = [
-        "$BROWSER, firefox"
-      ];
-      
       input = {
         kb_layout = "no";
         accel_profile = "flat";

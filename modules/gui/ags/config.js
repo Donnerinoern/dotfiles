@@ -1,17 +1,18 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
-import App from 'resource:///com/github/Aylur/ags/app.js';
+// import App from 'resource:///com/github/Aylur/ags/app.js';
 import { CPU, Memory } from './system.js';
 import { FocusedTitle, Workspaces } from './hyprland.js';
 import { DateTime } from './datetime.js';
 import { NetworkBox } from './network.js';
 import { Volume } from './volume.js';
+import Player from './media.js';
 
-const scss = '/home/donnan/nixos/modules/gui/ags/style.scss';
+// const scss = `${App.configDir}/style.scss`;
+// const css = `${App.configDir}/style.css`;
+const scss = '/home/donnan/nixos/modules/gui/ags/style.scss'; // TODO: Remove later when config is "done"
 const css = '/home/donnan/nixos/modules/gui/ags/style.css';
 Utils.exec(`sass ${scss} ${css}`);
-
-print(App.configDir);
 
 const Left = (monitorID) => Widget.Box({
     name: 'leftbox',
@@ -31,6 +32,7 @@ const Right = () => Widget.Box({
     hpack: 'end',
     spacing: 8,
     children: [
+        Player(),
         Volume(),
         NetworkBox(),
         CPU(),
