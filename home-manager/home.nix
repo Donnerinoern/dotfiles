@@ -5,7 +5,12 @@
   config,
   lib,
   ...
-}: {
+}: let
+  # cursorName = "Catppuccin-Mocha-Dark-Cursors";
+  # cursorPackage = pkgs.catppuccin-cursors.mochaDark;
+  cursorName = "phinger-cursors";
+  cursorPackage = pkgs.phinger-cursors;
+in {
   imports = [ 
     inputs.neovim-flake.homeManagerModules.default
     inputs.ags.homeManagerModules.default
@@ -17,6 +22,11 @@
     username = "donnan";
     homeDirectory = "/home/donnan";
     stateVersion = "24.05";
+    pointerCursor = {
+      gtk.enable = true;
+      name = cursorName;
+      package = cursorPackage;
+    };
   };
 
   xdg.portal = {
@@ -24,6 +34,22 @@
     xdgOpenUsePortal = true;
     configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
+
+  gtk = {
+    enable = true;
+    theme = { 
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3-dark";
+    };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
+    cursorTheme = {
+      package = cursorPackage;
+      name = cursorName;
+    };
   };
   
   programs = {

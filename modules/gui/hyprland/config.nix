@@ -9,12 +9,12 @@
     settings = {
       monitor = [
         "DP-1,2560x1440@144,0x0,auto,bitdepth,10"
-        "DP-2,1920x1080@144,2560x250,auto"
+        "DP-2,1920x1080@144,2560x0,auto"
       ];
     
-      workspace = [
-        "monitor:DP-2,name:Alt,default=true"
-      ];
+      # workspace = [
+      #   "monitor:DP-2,name:Alt,default=true"
+      # ];
       
       exec-once = [
         "ags"
@@ -50,9 +50,8 @@
       };
       
       windowrulev2 = [
-        "workspace 2,class:^(VencordDesktop)"
-        "workspace 2,class:^(WebCord)$"
-        "workspace 1,class:^(firefox)$"
+        "monitor 0,class:^(firefox)$"
+        "monitor 1,class:^(vesktop)"
       ];
       
       decoration = {
@@ -93,10 +92,15 @@
         "$mod, J, togglesplit,"
         "$mod, RETURN, exec,fnottctl dismiss"
 
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+
+        "$mod SHIFT, up, resizeactive, 0 -100"
+        "$mod SHIFT, down, resizeactive, 0 100"
+        "$mod SHIFT, left, resizeactive, -100 0"
+        "$mod SHIFT, right, resizeactive, 100 0"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"

@@ -157,7 +157,6 @@
     hyprpaper
     grim
     slurp
-    nwg-look
     wl-clipboard
 
     # the-powder-toy

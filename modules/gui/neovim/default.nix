@@ -37,7 +37,10 @@
           };
 
           ui = {
-            colorizer.enable = true;
+            colorizer = {
+              enable = true;
+              options.mode = "foreground";
+            };
             illuminate.enable = true;
             borders = {
               enable = true;

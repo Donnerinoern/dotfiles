@@ -4,17 +4,11 @@
   font-size: 14px;
 }
 
-.icon {
-  font-size: 17px;
-  font-weight: 600;
+box image {
+  font-size: 15px;
 }
 
-.title {
-  transition-property: text-color;
-  transition-duration: 0.5s;
-}
-
-#bar {
+.background {
   background-color: #540804;
   border: 2px solid #81171b;
   color: #ebefbf;
