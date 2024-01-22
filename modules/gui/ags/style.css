@@ -9,6 +9,11 @@
   font-weight: 600;
 }
 
+.title {
+  transition-property: text-color;
+  transition-duration: 0.5s;
+}
+
 #bar {
   background-color: #540804;
   border: 2px solid #81171b;
