@@ -119,8 +119,14 @@
         ",XF86AudioPlay,exec,playerctl play-pause"
         ",XF86AudioNext,exec,playerctl next"
         ",XF86AudioPrev,exec,playerctl previous"
+
         ",XF86AudioRaiseVolume,exec,wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+        "$mod, XF86AudioRaiseVolume, exec, playerctl set-volume -l 1.5 @DEFAULT_AUDIO_SOURCE@ 5%+"
+        "$mod, XF86AudioLowerVolume, exec, playerctl set-volume @DEFAULT_AUDIO_SOURCE 5%-"
+        "$mod, XF86AudioMute, exec, playerctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"

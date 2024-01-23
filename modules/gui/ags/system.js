@@ -35,7 +35,7 @@ export const CPU = () => Widget.Box({
     spacing: 4,
     children: [
         Widget.Label({
-            label: cpu.bind().transform(value => `${value}%`)
+            label: cpu.bind().transform(value => `${value.length > 3 ? value : " "+value}%`)
         }),
         Widget.Icon({
             icon: 'cpu-symbolic',
@@ -47,7 +47,7 @@ export const Memory = () => Widget.Box({
     spacing: 4,
     children: [
         Widget.Label({
-            label: memory.bind().transform(value => `${value}%`)
+            label: memory.bind().transform(value => ` ${value}%`)
         }),
         Widget.Icon({
             icon: 'memory-symbolic',

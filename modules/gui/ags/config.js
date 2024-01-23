@@ -1,6 +1,6 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
-// import App from 'resource:///com/github/Aylur/ags/app.js';
+import App from 'resource:///com/github/Aylur/ags/app.js';
 import { CPU, Memory } from './system.js';
 import { FocusedTitle, Workspaces } from './hyprland.js';
 import { DateTime } from './datetime.js';
@@ -8,20 +8,36 @@ import { NetworkBox } from './network.js';
 import { Volume } from './volume.js';
 import Player from './media.js';
 
-// const scss = `${App.configDir}/style.scss`;
-// const css = `${App.configDir}/style.css`;
-const scss = '/home/donnan/nixos/modules/gui/ags/style.scss'; // TODO: Remove later when config is "done"
-const css = '/home/donnan/nixos/modules/gui/ags/style.css';
-Utils.exec(`sass ${scss} ${css}`);
+// const scss = '/home/donnan/nixos/modules/gui/ags/style.scss'; // TODO: Remove later when config is "done"
+// const css = '/home/donnan/nixos/modules/gui/ags/style.css';
+
+Utils.monitorFile(
+    `${App.configDir}/style.scss`,
+
+    function() {
+        const scss = `${App.configDir}/style.scss`;
+        const css = `${App.configDir}/style.css`;
+        Utils.exec(`sass ${scss} ${css}`);
+        App.resetCss();
+        App.applyCss(css);
+    },
+    'file',
+)
+//
 
 const Left = (monitorID) => Widget.Box({
     name: 'leftbox',
     children: [
         Workspaces(monitorID),
+        Widget.CenterBox({
+            hexpand: true,
+            center_widget: monitorID === 0 ? Player(monitorID) : Widget.Label({visible: false})
+        })
     ],
 });
 
 const Center = () => Widget.Box({
+    css: 'min-width: 237px',
     children: [
         FocusedTitle(),
     ],
@@ -32,7 +48,7 @@ const Right = () => Widget.Box({
     hpack: 'end',
     spacing: 8,
     children: [
-        Player(),
+        // Player(),
         Volume(),
         NetworkBox(),
         CPU(),
@@ -55,7 +71,7 @@ const Bar = (monitor = 0, name) => Widget.Window({
 });
 
 export default { 
-    style: css,
+    style: `${App.configDir}/style.css`,
     windows: [
         Bar(0, 'mainBar'),
         Bar(1, 'altBar')

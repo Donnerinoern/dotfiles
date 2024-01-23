@@ -3,8 +3,24 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 
 const dispatch = ws => Hyprland.sendMessage(`dispatch workspace ${ws}`);
 
+// export const FocusedTitle = () => Widget.Label({
+//     label: Hyprland.active.client.bind('title').transform(t => {
+//         if (t.length > 10) {
+//             t.slice(10, t.length-1).padEnd(3, '.')
+//         }
+//     }),
+// });
+
 export const FocusedTitle = () => Widget.Label({
-    label: Hyprland.active.client.bind('title'),
+    hexpand: true,
+    tooltip_text: Hyprland.active.client.bind('title'),
+    setup: self => self.bind('label', Hyprland.active.client, 'title', t => {
+        if (t.length > 30) {
+            return t.slice(0, 30) + '...';
+        } else {
+            return t;
+        }
+    })
 });
 
 export const Workspaces = (monitorID) => Widget.EventBox({

@@ -141,13 +141,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    armcord
     nvtop-amd
     dart-sass
     fastfetch
     age
     unzip
     # xwaylandvideobridge
-    # armcord
     glxinfo
     go
     gamescope
