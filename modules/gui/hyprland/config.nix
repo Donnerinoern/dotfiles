@@ -9,7 +9,7 @@
     settings = {
       monitor = [
         "DP-1,2560x1440@144,0x0,auto,bitdepth,10"
-        "DP-2,1920x1080@144,2560x0,auto"
+        "DP-2,1920x1080@144,2560x400,auto"
       ];
     
       exec-once = [
