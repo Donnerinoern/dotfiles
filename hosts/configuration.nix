@@ -93,6 +93,7 @@
     };
     udisks2.enable = true;
     fstrim.enable = true;
+    gvfs.enable = true;
     # printing.enable = true;
   };
   
@@ -194,7 +195,6 @@
       roboto
       iosevka
       (nerdfonts.override { fonts = [ "Iosevka" ]; })
-      material-symbols
      ];
   };
 

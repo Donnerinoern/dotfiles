@@ -37,9 +37,10 @@
       
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     
-    neovim-flake.url = "github:Donnerinoern/neovim-flake";
+    neovim-flake.url = "github:NotAShelf/neovim-flake";
 
-    ags.url = "github:Aylur/ags";
+    # ags.url = "github:Aylur/ags";
+    ags.url = "github:Donnerinoern/ags";
 
     nh = {
       url = "github:viperML/nh";
