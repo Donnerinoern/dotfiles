@@ -52,6 +52,7 @@
     settings = {
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
+      builders-use-substitutes = true;
       substituters = [
         "https://hyprland.cachix.org"
         "https://anyrun.cachix.org"
@@ -147,13 +148,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    webcord-vencord
     armcord
     nvtop-amd
     dart-sass
     fastfetch
     age
     unzip
-    # xwaylandvideobridge
     glxinfo
     go
     gamescope
@@ -166,7 +167,6 @@
     slurp
     wl-clipboard
 
-    # the-powder-toy
     # protontricks
 
     nodejs
@@ -217,16 +217,14 @@
         ];
       };
     };
-    
+
     hyprland = {
       enable = true;
     };
-    
+
     ssh.startAgent = true;
-    
-    # fish.enable = true;
   };
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

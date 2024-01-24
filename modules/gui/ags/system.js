@@ -11,7 +11,8 @@ const cpu = Variable(0, {
             .split('\n')
             .find(line => line.includes('Cpu(s)'))
             .split(/\s+/)[1]
-            .replace(',', '.'),
+            // .replace(',', '.'),
+            .split(',')[0]
     ],
 });
 
@@ -31,11 +32,11 @@ const memory = Variable(0, {
     ],
 });
 
-export const CPU = () => Widget.Box({
+const CPU = () => Widget.Box({
     spacing: 4,
     children: [
         Widget.Label({
-            label: cpu.bind().transform(value => `${value.length > 3 ? value : " "+value}%`)
+            label: cpu.bind().transform(value => `${value.length >= 2 ? value : " "+value}%`)
         }),
         Widget.Icon({
             icon: 'cpu-symbolic',
@@ -43,7 +44,7 @@ export const CPU = () => Widget.Box({
     ],
 });
 
-export const Memory = () => Widget.Box({
+const Memory = () => Widget.Box({
     spacing: 4,
     children: [
         Widget.Label({
@@ -54,4 +55,11 @@ export const Memory = () => Widget.Box({
         }),
     ],
 });
+
+export const System = () => Widget.Box({
+    children: [
+        CPU(),
+        Memory()
+    ]
+})
 

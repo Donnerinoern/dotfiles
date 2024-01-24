@@ -1,0 +1,64 @@
+@define-color bg_color #540804;
+@define-color active_color #9c1c20;
+@define-color border_color #81171b;
+@define-color orange_color #c85919;
+@define-color text_color #ebefbf;
+
+* {
+    font-family: "Iosevka";
+    font-size: 16px;
+    color: @text_color;
+    border-color: @orange_color;
+    outline-color: @orange_color;
+}
+
+window {
+    background: transparent;
+}
+
+entry {
+    background-color: @bg_color;
+    box-shadow: 0px 0px 0px 1px @orange_color inset;
+    border-radius: 10px;
+}
+
+#main {
+    border-radius: 10px;
+    background-color: @bg_color;
+}
+
+box#main {
+    border: 2px solid @border_color;
+}
+
+box#plugin {
+    background: transparent;
+    color: @text_color;
+}
+
+list > #plugin {
+    background: @bg_color;
+}
+
+#match {
+    background: @bg_color;
+    /* border-radius: 10px; */
+    /* border: 0px; */
+}
+
+#match:selected {
+    /* background-color: @orange_color; */
+    /* border-radius: 10px; */
+
+    /* box-shadow: 0px 0px 0px 1px @orange_color inset; */
+
+    border: 2px solid @orange_color;
+    border-radius: 10px;
+
+    /* outline: 2px solid @orange_color; */
+    /* -gtk-outline-radius: 10px; */
+}
+
+#plugin {
+    background-color: @bg_color;
+}

@@ -2,12 +2,13 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Gtk from 'gi://Gtk?version=3.0';
-import { CPU, Memory } from './system.js';
+import { System } from './system.js';
 import { FocusedTitle, Workspaces } from './hyprland.js';
 import { DateTime } from './datetime.js';
 import { NetworkBox } from './network.js';
 import { Volume } from './volume.js';
 import Player from './media.js';
+import { Power } from './power.js';
 
 // const scss = '/home/donnan/nixos/modules/gui/ags/style.scss'; // TODO: Remove later when config is "done"
 // const css = '/home/donnan/nixos/modules/gui/ags/style.css';
@@ -27,6 +28,11 @@ Utils.monitorFile(
     'file',
 )
 //
+
+const SepIcon = () => Widget.Icon({
+    class_name: 'sep',
+    icon: 'media-record-symbolic'
+});
 
 const Left = (monitorID) => Widget.Box({
     name: 'leftbox',
@@ -51,12 +57,14 @@ const Right = () => Widget.Box({
     hpack: 'end',
     spacing: 8,
     children: [
-        // Player(),
         Volume(),
+        SepIcon(),
         NetworkBox(),
-        CPU(),
-        Memory(),
+        SepIcon(),
+        System(),
+        SepIcon(),
         DateTime(),
+        Power()
     ],
 });
 
@@ -80,3 +88,6 @@ export default {
         Bar(1, 'altBar')
     ]
 };
+
+// 'message-indicator-symbolic'
+// 'media-record-symbolic'
