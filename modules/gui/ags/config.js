@@ -1,6 +1,7 @@
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
+import Gtk from 'gi://Gtk?version=3.0';
 import { CPU, Memory } from './system.js';
 import { FocusedTitle, Workspaces } from './hyprland.js';
 import { DateTime } from './datetime.js';
@@ -10,6 +11,8 @@ import Player from './media.js';
 
 // const scss = '/home/donnan/nixos/modules/gui/ags/style.scss'; // TODO: Remove later when config is "done"
 // const css = '/home/donnan/nixos/modules/gui/ags/style.css';
+
+Gtk.IconTheme.get_default().append_search_path('/home/donnan/svg');
 
 Utils.monitorFile(
     `${App.configDir}/style.scss`,

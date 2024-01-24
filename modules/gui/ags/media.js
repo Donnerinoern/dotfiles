@@ -1,7 +1,6 @@
 import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import Utils from 'resource:///com/github/Aylur/ags/utils.js';
-import Variable from 'resource:///com/github/Aylur/ags/variable.js';
 
 const FALLBACK_ICON = 'audio-x-generic-symbolic';
 const PLAY_ICON = 'media-playback-start-symbolic';
