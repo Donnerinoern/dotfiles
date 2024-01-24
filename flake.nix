@@ -35,9 +35,12 @@
     
     zig-overlay.url = "github:mitchellh/zig-overlay";
       
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    
     neovim-flake.url = "github:NotAShelf/neovim-flake";
+
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # ags.url = "github:Aylur/ags";
     ags.url = "github:Donnerinoern/ags";

@@ -39,7 +39,13 @@
           ui = {
             colorizer = {
               enable = true;
-              options.mode = "foreground";
+              options = {
+                rgb = true;
+                rrggbb = true;
+                names = true;
+                css = true;
+                mode = "background";
+              };
             };
             illuminate.enable = true;
             borders = {
