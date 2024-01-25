@@ -16,7 +16,7 @@
         "ags"
         "hyprpaper"
         "firefox"
-        "armcord"
+        "webcord"
         "foot -s"
       ];
 
@@ -43,7 +43,7 @@
       
       windowrulev2 = [
         "monitor 0,class:^(firefox)$"
-        "monitor 1,class:^(armcord)"
+        "monitor 1,class:^(WebCord)"
       ];
       
       decoration = {
@@ -125,9 +125,9 @@
         ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ",XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
-        ",XF86AudioRaiseVolume SHIFT, exec, playerctl set-volume -l 1.5 @DEFAULT_AUDIO_SOURCE@ 5%+"
-        ",XF86AudioLowerVolume SHIFT, exec, playerctl set-volume @DEFAULT_AUDIO_SOURCE 5%-"
-        ",XF86AudioMute SHIFT, exec, playerctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        "$mod SHIFT, +, exec, playerctl set-volume -l 1.5 @DEFAULT_AUDIO_SOURCE@ 5%+"
+        "$mod SHIFT, -, exec, playerctl set-volume @DEFAULT_AUDIO_SOURCE 5%-"
+        "$mod SHIFT, *, exec, playerctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"

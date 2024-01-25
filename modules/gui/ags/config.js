@@ -64,6 +64,7 @@ const Right = () => Widget.Box({
         System(),
         SepIcon(),
         DateTime(),
+        SepIcon(),
         Power()
     ],
 });
