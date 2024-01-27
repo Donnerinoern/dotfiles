@@ -33,7 +33,6 @@ const Player = player => {
     const positionSlider = Widget.Slider({
         class_name: 'position',
         draw_value: false,
-        // hexpand: true,
         on_change: ({ value }) => player.position = value * player.length,
         setup: self => {
             const update = () => {
@@ -86,9 +85,8 @@ const Player = player => {
     });
 
     const playPause = Widget.Button({
-        on_clicked: (self) => {
+        on_clicked: () => {
             player.playPause();
-            // self.class_name = 'focused';
         },
         visible: player.bind('can_play'),
         child: Widget.Icon({

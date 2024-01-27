@@ -13,14 +13,10 @@ const dispatch = ws => Hyprland.sendMessage(`dispatch workspace ${ws}`);
 
 export const FocusedTitle = () => Widget.Label({
     hexpand: true,
+    max_width_chars: 30,
+    truncate: 'end',
+    label: Hyprland.active.client.bind('title'),
     tooltip_text: Hyprland.active.client.bind('title'),
-    setup: self => self.bind('label', Hyprland.active.client, 'title', t => {
-        if (t.length > 30) {
-            return t.slice(0, 30) + '...';
-        } else {
-            return t;
-        }
-    })
 });
 
 export const Workspaces = (monitorID) => Widget.EventBox({

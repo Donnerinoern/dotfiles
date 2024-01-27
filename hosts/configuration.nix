@@ -56,10 +56,12 @@
       substituters = [
         "https://hyprland.cachix.org"
         "https://anyrun.cachix.org"
+        "https://neovim-flake.cachix.org"
       ];
       trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+        "neovim-flake.cachix.org-1:iyQ6lHFhnB5UkVpxhQqLJbneWBTzM8LBYOFPLNH4qZw="
       ];
     };
   };
@@ -148,6 +150,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    libnotify
+    cmake
     meson
     ninja
     webcord-vencord

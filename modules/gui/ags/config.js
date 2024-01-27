@@ -9,6 +9,7 @@ import { NetworkBox } from './network.js';
 import { Volume } from './volume.js';
 import Player from './media.js';
 import { Power } from './power.js';
+import NotificationPopup from './notification.js';
 
 // const scss = '/home/donnan/nixos/modules/gui/ags/style.scss'; // TODO: Remove later when config is "done"
 // const css = '/home/donnan/nixos/modules/gui/ags/style.css';
@@ -69,8 +70,8 @@ const Right = () => Widget.Box({
     ],
 });
 
-const Bar = (monitor = 0, name) => Widget.Window({
-    name: name,
+const Bar = (monitor) => Widget.Window({
+    name: `bar${monitor}`,
     monitor,
     margins: [8, 8, 0, 8],
     anchor: ['top', 'left', 'right'],
@@ -82,13 +83,20 @@ const Bar = (monitor = 0, name) => Widget.Window({
     }),
 });
 
+// Utils.timeout(100, () => Utils.execAsync([
+//     'notify-send',
+//     'Notification Popup Example',
+//     'Lorem ipsum dolor sit amet, qui minim labore adipisicing ' +
+//     'minim sint cillum sint consectetur cupidatat.',
+//     '-A', 'Cool!',
+//     '-i', 'info-symbolic',
+// ]));
+
 export default { 
     style: `${App.configDir}/style.css`,
     windows: [
         Bar(0, 'mainBar'),
-        Bar(1, 'altBar')
+        Bar(1, 'altBar'),
+        NotificationPopup(0)
     ]
 };
-
-// 'message-indicator-symbolic'
-// 'media-record-symbolic'
