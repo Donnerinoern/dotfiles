@@ -146,6 +146,10 @@ in {
       enable = true;
       userName = "Donnerinoern";
       userEmail = "72634505+Donnerinoern@users.noreply.github.com";
+      extraConfig = {
+        push.autoSetupRemote = true;
+        init.defaultBranch = "main";
+      };
     };
       
     fuzzel = {

@@ -31,10 +31,14 @@ const Player = player => {
     // });
 
     const titleLabel = Widget.Label({
+        max_width_chars: 30,
+        truncate: 'end',
         label: player.bind('track_title')
     });
 
     const artistsLabel = Widget.Label({
+        max_width_chars: 30,
+        truncate: 'end',
         label: player.bind('track_artists').transform(a => a.join(', ') || '')
     });
 

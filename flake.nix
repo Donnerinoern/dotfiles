@@ -35,7 +35,8 @@
     
     zig-overlay.url = "github:mitchellh/zig-overlay";
       
-    neovim-flake.url = "github:NotAShelf/neovim-flake";
+    # neovim-flake.url = "github:NotAShelf/neovim-flake";
+    neovim-flake.url = "github:Donnerinoern/neovim-flake";
 
     anyrun = {
       url = "github:Kirottu/anyrun";

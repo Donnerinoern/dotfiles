@@ -40,11 +40,9 @@
             colorizer = {
               enable = true;
               options = {
-                rgb = true;
-                rrggbb = true;
-                names = true;
-                css = true;
-                mode = "background";
+                autoAttach = {
+                  enable = true;
+                };
               };
             };
             illuminate.enable = true;

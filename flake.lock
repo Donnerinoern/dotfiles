@@ -681,11 +681,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1706746258,
-        "narHash": "sha256-9iNK1cP/dxCFh1NYVLJHijoJxlT3bXxTQToMDNZtjzU=",
+        "lastModified": 1706798041,
+        "narHash": "sha256-BbvuF4CsVRBGRP8P+R+JUilojk0M60D7hzqE0bEvJBQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2db6a2a42930ffff0ffd690dec3f2c0b6f4fe66d",
+        "rev": "4d53427bce7bf3d17e699252fd84dc7468afc46e",
         "type": "github"
       },
       "original": {
@@ -1132,15 +1132,15 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1706712454,
-        "narHash": "sha256-jRfU3KxQ0oVg22cbTum/RSusFxMZQQgYXQ3+3TbaDGQ=",
-        "owner": "NotAShelf",
+        "lastModified": 1706803031,
+        "narHash": "sha256-n0LW/0HE45a6PtZGD+X+sn1ygSQwGaJhBjhaCbO/y5A=",
+        "owner": "Donnerinoern",
         "repo": "neovim-flake",
-        "rev": "232c8129ca44e522459d01b19cdae048d49199cd",
+        "rev": "000b73e279552f5a7cf4d9219deccb9d6d7ad184",
         "type": "github"
       },
       "original": {
-        "owner": "NotAShelf",
+        "owner": "Donnerinoern",
         "repo": "neovim-flake",
         "type": "github"
       }
