@@ -12,22 +12,30 @@ function lengthStr(length) {
     const min1 = Math.floor(length / 60);
     const min = min1 > 0 ? min1 : '0';
     const sec1 = Math.floor(length % 60);
-    const sec = sec1 > 0 ? sec1 : '0';
+    const sec = sec1 > 0 ? sec1 : 0;
     const sec0 = sec < 10 ? '0' : '';
     return `${min}:${sec0}${sec}`;
 }
 
 const Player = player => {
     const img = Widget.Icon({
-        size: 24,
+        size: 30,
         class_name: 'icon',
         icon: player.bind('cover_path'),
     });
 
-    const titleAndArtist = Widget.Label({
-        setup: self => self.hook(Mpris, () => {
-            self.label = `${player.track_title} - ${player.track_artists} | `
-        }, 'changed')
+    // const titleAndArtist = Widget.Label({
+    //     setup: self => self.hook(Mpris, () => {
+    //         self.label = `${player.bind('track_title') - ${player.bind('track_artists')}`}
+    //     }, 'changed')
+    // });
+
+    const titleLabel = Widget.Label({
+        label: player.bind('track_title')
+    });
+
+    const artistsLabel = Widget.Label({
+        label: player.bind('track_artists').transform(a => a.join(', ') || '')
     });
 
     const positionSlider = Widget.Slider({
@@ -36,8 +44,15 @@ const Player = player => {
         on_change: ({ value }) => player.position = value * player.length,
         setup: self => {
             const update = () => {
-                self.visible = player.length > 0;
-                self.value = player.position / player.length;
+                if (self.dragging)
+                    return;
+
+                if (player.length > 0) {
+                    self.visible = true;
+                    self.value = player.position / player.length;
+                } else {
+                    self.visible = false;
+                }
             };
             self.hook(player, update);
             self.hook(player, update, 'position');
@@ -48,8 +63,9 @@ const Player = player => {
     const positionLabel = Widget.Label({
         setup: self => {
             const update = (_, time) => {
-                self.label = lengthStr(time || player.position)
-                self.visible = player.length > 0;
+                player.length > 0
+                    ? self.label = lengthStr(time || player.position)
+                    : self.visible = !!player;
             };
             self.hook(player, update, 'position');
             self.poll(1000, update);
@@ -84,20 +100,16 @@ const Player = player => {
         }),
     });
 
-    const playPause = Widget.Button({
-        on_clicked: () => {
-            player.playPause();
-        },
-        visible: player.bind('can_play'),
-        child: Widget.Icon({
-            icon: player.bind('play_back_status').transform(s => {
-                switch (s) {
-                    case 'Playing': return PAUSE_ICON;
-                    case 'Paused':
-                    case 'Stopped': return PLAY_ICON;
-                }
-            }),
-        }),
+    const playPauseButton = Widget.Button({
+        child: Widget.Stack({
+            transition: 'crossfade',
+            items: [
+                ['Playing', Widget.Icon({icon: PAUSE_ICON})],
+                ['Paused', Widget.Icon({icon: PLAY_ICON})],
+                ['Stopped', Widget.Icon({icon: PLAY_ICON})]
+            ]
+        }).bind('shown', player, 'play-back-status', p => `${p}`),
+        on_clicked: () => player.playPause()
     });
 
     const prev = Widget.Button({
@@ -120,12 +132,17 @@ const Player = player => {
         children: [
             icon,
             img,
-            titleAndArtist,
+            // titleAndArtist,
+            titleLabel,
+            Widget.Label({label: '|'}),
+            artistsLabel,
+
             sliderBox,
             Widget.Box({
                 children: [
                     prev,
-                    playPause,
+                    // playPause,
+                    playPauseButton,
                     next,
                 ],
             }),
@@ -134,7 +151,8 @@ const Player = player => {
 }
 
 export default () => Widget.Box({
-    setup: self => self.hook(Mpris, () => {
-        self.child = Player(Mpris.getPlayer('playerctld'));
-    }, 'player-changed')
+    visible: Mpris.bind('players').transform(p => p.length > 0),
+    children: Mpris.bind('players').transform(ps => ps
+        .filter(p => p.name === 'playerctld').map(Player)
+    )
 });

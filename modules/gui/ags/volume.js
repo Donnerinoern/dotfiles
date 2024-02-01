@@ -6,8 +6,6 @@ export const Volume = () => Widget.Box({
     spacing: 4,
     children: [
         Widget.Icon().hook(Audio, self => {
-            if (!Audio.speaker)
-                return;
             if (Audio.speaker.stream.is_muted) {
                 self.icon = 'audio-volume-muted-symbolic';
                 return;
@@ -18,7 +16,7 @@ export const Volume = () => Widget.Box({
                 [67, 'audio-volume-high-symbolic'],
                 [34, 'audio-volume-medium-symbolic'],
                 [0, 'audio-volume-low-symbolic'],
-            ].find(([threshold]) => threshold <= Audio.speaker?.volume * 100)[1];
+            ].find(([threshold]) => threshold <= Audio.speaker.volume * 100)[1];
 
             self.icon = `${icon}`;
         }, 'speaker-changed'),
@@ -26,7 +24,7 @@ export const Volume = () => Widget.Box({
             if (Audio.speaker.stream.is_muted) {
                 self.label = '0%';
             } else {
-                self.label = `${Math.round(Audio.speaker?.volume * 100 || 0)}%`;
+                self.label = `${Math.round(Audio.speaker.volume * 100 || 0)}%`;
             }
         }, 'speaker-changed'),
 
@@ -38,13 +36,13 @@ export const Volume = () => Widget.Box({
                 return;
             }
 
-            self.icon = Audio.microphone?.volume * 100 >= 50 ? 'audio-input-microphone-high-symbolic' : 'audio-input-microphone-medium-symbolic';
+            self.icon = Audio.microphone.volume * 100 >= 50 ? 'audio-input-microphone-high-symbolic' : 'audio-input-microphone-medium-symbolic';
         }, 'microphone-changed'),
         Widget.Label().hook(Audio, self => {
-            if (Audio.microphone?.stream.is_muted) {
+            if (Audio.microphone.is_muted) {
                 self.label = '0%';
             } else {
-                self.label = `${Math.round(Audio.microphone?.volume * 100 || 0)}%`;
+                self.label = `${Math.round(Audio.microphone.volume * 100 || 0)}%`;
             }
         })
     ],

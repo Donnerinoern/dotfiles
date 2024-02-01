@@ -42,8 +42,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ags.url = "github:Aylur/ags";
-    ags.url = "github:Donnerinoern/ags";
+    ags.url = "github:Aylur/ags";
+    # ags.url = "github:Donnerinoern/ags";
 
     nh = {
       url = "github:viperML/nh";

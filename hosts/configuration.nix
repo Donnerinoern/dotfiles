@@ -19,7 +19,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     initrd.kernelModules = [ "kvm-amd" "amdgpu" ];
     supportedFilesystems = [ "bcachefs" ];
   };
@@ -150,6 +150,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    clang
     libnotify
     cmake
     meson

@@ -174,7 +174,7 @@ in {
     
   services = {
     fnott = {
-      enable = true;
+      enable = false;
       configFile = ./fnott.ini;
     };
 

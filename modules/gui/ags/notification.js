@@ -46,14 +46,13 @@ const Popups = parent => {
 
 const PopupList = (transition = 'slide_right') => Widget.Box({
     css: 'padding: 1px',
-    hexpand: true,
     children: [
         Widget.Revealer({
-            hexpand: true,
             transition,
             setup: self => self.child = Popups(self),
         }),
     ],
+    // visibility: TODO: Fix
 });
 
 export default monitor => Widget.Window({

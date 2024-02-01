@@ -95,6 +95,8 @@
             nix.enable = true;
             zig.enable = true;
             go.enable = true;
+            css.enable = true;
+            tailwind.enable = true;
             rust = {
               enable = true;
               crates.enable = true;

@@ -7,6 +7,7 @@ import { FocusedTitle, Workspaces } from './hyprland.js';
 import { DateTime } from './datetime.js';
 import { NetworkBox } from './network.js';
 import { Volume } from './volume.js';
+// import { Volume } from './new_volume.js';
 import Player from './media.js';
 import { Power } from './power.js';
 import NotificationPopup from './notification.js';
@@ -82,15 +83,6 @@ const Bar = (monitor) => Widget.Window({
         end_widget: Right(),
     }),
 });
-
-// Utils.timeout(100, () => Utils.execAsync([
-//     'notify-send',
-//     'Notification Popup Example',
-//     'Lorem ipsum dolor sit amet, qui minim labore adipisicing ' +
-//     'minim sint cillum sint consectetur cupidatat.',
-//     '-A', 'Cool!',
-//     '-i', 'info-symbolic',
-// ]));
 
 export default { 
     style: `${App.configDir}/style.css`,
