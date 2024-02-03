@@ -15,10 +15,14 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/configuration.nix
-          agenix.nixosModules.default
-          {
-            age.secrets.secrets1.file = ./secrets/secret1.age;
-          }
+          # agenix.nixosModules.default
+          # {
+          #   age.secrets.secret1.file = ./secrets/secret1.age;
+          #   age.identityPaths = [
+          #     "/home/donnan/.ssh/donnan"
+          #     "/home/donnan/.ssh/brutus"
+          #   ];
+          # }
         ];
       };
     };

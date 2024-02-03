@@ -26,6 +26,9 @@ in {
       name = cursorName;
       package = cursorPackage;
     };
+    packages = with pkgs; [
+      starship
+    ];
   };
 
   xdg.portal = {
@@ -141,7 +144,7 @@ in {
       enable = true;
       configDir = ../modules/gui/ags;
     };
-  
+
     git = {
       enable = true;
       userName = "Donnerinoern";
@@ -151,7 +154,7 @@ in {
         init.defaultBranch = "main";
       };
     };
-      
+
     fuzzel = {
       enable = true;
       settings = {
@@ -174,8 +177,9 @@ in {
     mpv.enable = true;
     fzf.enable = true;
     fish.enable = true;
+    nix-index.enable = true;
   };
-    
+
   services = {
     fnott = {
       enable = false;

@@ -126,8 +126,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.donnan = {
     isNormalUser = true;
-    # description = "Donnan"; # TODO: Encrypt my real name. Add it here.
-    description = config.age.secrets.secret1.path;
+    description = "Donnan"; # TODO: Encrypt my real name. Add it here.
+    # description = config.age.secrets.secret1.path;
     extraGroups = [ "networkmanager" "wheel" "input" ];
     # shell = pkgs.nushell;
     shell = pkgs.fish;
@@ -137,9 +137,6 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      # permittedInsecurePackages = [
-      #   "electron-25.9.0"
-      # ];
     };
     overlays = [
       # inputs.neovim-nightly-overlay.overlay
