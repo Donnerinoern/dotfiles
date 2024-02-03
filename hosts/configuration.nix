@@ -126,7 +126,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.donnan = {
     isNormalUser = true;
-    description = "Donnan"; # TODO: Encrypt my real name. Add it here.
+    # description = "Donnan"; # TODO: Encrypt my real name. Add it here.
+    description = config.age.secrets.secret1.path;
     extraGroups = [ "networkmanager" "wheel" "input" ];
     # shell = pkgs.nushell;
     shell = pkgs.fish;
@@ -150,7 +151,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
+    inputs.agenix.packages.x86_64-linux.default
     clang
+    binutils
     libnotify
     cmake
     meson
