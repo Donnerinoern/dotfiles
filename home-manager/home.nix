@@ -176,7 +176,10 @@ in {
     firefox.enable = true;
     mpv.enable = true;
     fzf.enable = true;
-    fish.enable = true;
+    fish = {
+      enable = true;
+      shellInit = "starship init fish | source";
+    };
     nix-index.enable = true;
   };
 
