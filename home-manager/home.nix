@@ -181,14 +181,16 @@ in {
       shellInit = "starship init fish | source";
     };
     nix-index.enable = true;
+
+    swayidle = {
+      enable = true;
+      timeouts = [
+        { timeout = 300; command = "hyprctl dispatch dpms off"; }
+      ];
+    };
   };
 
   services = {
-    fnott = {
-      enable = false;
-      configFile = ./fnott.ini;
-    };
-
     playerctld.enable = true;
     udiskie.enable = true;
   };

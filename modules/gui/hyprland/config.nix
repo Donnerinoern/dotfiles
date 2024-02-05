@@ -9,9 +9,9 @@
     settings = {
       monitor = [
         "DP-1,2560x1440@144,0x0,auto,bitdepth,10"
-        "DP-2,1920x1080@144,2560x400,auto"
+        "DP-2,1920x1080@144,2560x440,auto"
       ];
-    
+
       exec-once = [
         "ags"
         "hyprpaper"
@@ -25,13 +25,18 @@
         accel_profile = "flat";
         sensitivity = "0";
       };
-      
+
+      "$primary_color" = "rgb(81171b)";
+      "$secondary_color" = "rgb(ad2e24)";
+      "$inactive_color" = "rgb(2a2b2a)";
+      "$background_color" = "rgb(3a0603)";
+
       general = {
         gaps_in = "4";
         gaps_out = "8";
         border_size = "2";
-        "col.active_border" = "rgb(81171b) rgb(ad2e24) 45deg";
-        "col.inactive_border" = "rgb(2a2b2a)";
+        "col.active_border" = "$primary_color $secondary_color 45deg";
+        "col.inactive_border" = "$inactive_color";
         layout = "dwindle";
       };
 
@@ -39,13 +44,24 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         disable_autoreload = true;
+        mouse_move_enables_dpms = true;
+        key_press_enables_dpms = true;
+        background_color = "$background_color";
       };
-      
+
+      workspace = [
+        "name:F1,monitor:1,default:true"
+        "name:F2,monitor:1"
+        "name:F3,monitor:1"
+        "name:F4,monitor:1"
+        "name:F5,monitor:1"
+      ];
+
       windowrulev2 = [
         "monitor 0,class:^(firefox)$"
         "monitor 1,class:^(WebCord)"
       ];
-      
+
       decoration = {
         rounding = "10";
         drop_shadow = "yes";
@@ -53,7 +69,7 @@
         shadow_render_power = "3";
         "col.shadow" = "rgba(1a1a1aee)";
       };
-      
+
       animations = {
         enabled = "yes";
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
@@ -66,24 +82,22 @@
           "workspaces, 1, 6, default"
         ];
       };
-      
+
       dwindle = {
         pseudotile = "yes";
         preserve_split = "yes";
       };
-      
+
       "$mod" = "SUPER";
 
       bind = [
         "$mod, Q, exec,footclient"
         "$mod, C, killactive,"
         "$mod, M, exit,"
-        # "$mod, R, exec,fuzzel"
         "$mod, R, exec, anyrun"
         "$mod, V, togglefloating,"
         "$mod, P, pseudo,"
         "$mod, J, togglesplit,"
-        "$mod, RETURN, exec,fnottctl dismiss"
 
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
@@ -121,25 +135,30 @@
         ",XF86AudioNext,exec,playerctl next"
         ",XF86AudioPrev,exec,playerctl previous"
 
-        ",XF86AudioRaiseVolume,exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ",XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-
-        "$mod, XF86AudioRaiseVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+"
-        "$mod, XF86AudioLowerVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
         "$mod, XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
+
+        ''$mod SHIFT, S, exec, grim -g "$(slurp -w 0)" - | wl-copy -t image/png''
       ];
-      
+
+      binde = [
+        ",XF86AudioRaiseVolume,exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+
+        "$mod, XF86AudioRaiseVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+"
+        "$mod, XF86AudioLowerVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+      ];
+
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
     };
-    extraConfig = ''
-      bind = $mod SHIFT,S,exec, grim -g "$(slurp -w 0)" - | wl-copy -t image/png
-    '';
+    # extraConfig = ''
+    #   bind = $mod SHIFT,S,exec, grim -g "$(slurp -w 0)" - | wl-copy -t image/png
+    # '';
   };
 }

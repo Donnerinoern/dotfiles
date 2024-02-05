@@ -12,6 +12,7 @@ const PowerOff = () => Widget.Button({
 });
 
 export const Power = () => Widget.Box({
+    class_name: 'powerButtons',
     children: [
         Reboot(),
         PowerOff()

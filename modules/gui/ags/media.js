@@ -107,11 +107,11 @@ const Player = player => {
     const playPauseButton = Widget.Button({
         child: Widget.Stack({
             transition: 'crossfade',
-            items: [
-                ['Playing', Widget.Icon({icon: PAUSE_ICON})],
-                ['Paused', Widget.Icon({icon: PLAY_ICON})],
-                ['Stopped', Widget.Icon({icon: PLAY_ICON})]
-            ]
+            children: {
+                'Playing': Widget.Icon({icon: PAUSE_ICON}),
+                'Paused': Widget.Icon({icon: PLAY_ICON}),
+                'Stopped': Widget.Icon({icon: PLAY_ICON})
+            }
         }).bind('shown', player, 'play-back-status', p => `${p}`),
         on_clicked: () => player.playPause()
     });

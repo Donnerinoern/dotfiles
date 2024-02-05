@@ -9,3 +9,4 @@ This is a list of people that either helped me directly, or people that I learne
 - [NotAShelf](https://github.com/NotAShelf)
 - [jacekpoz](https://codeberg.org/jacekpoz)
 - [fufexan](https://github.com/fufexan)
+- [Aylur](https://github.com/Aylur)

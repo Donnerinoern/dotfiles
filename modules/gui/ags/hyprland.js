@@ -3,14 +3,6 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 
 const dispatch = ws => Hyprland.sendMessage(`dispatch workspace ${ws}`);
 
-// export const FocusedTitle = () => Widget.Label({
-//     label: Hyprland.active.client.bind('title').transform(t => {
-//         if (t.length > 10) {
-//             t.slice(10, t.length-1).padEnd(3, '.')
-//         }
-//     }),
-// });
-
 export const FocusedTitle = () => Widget.Label({
     hexpand: true,
     max_width_chars: 30,
@@ -24,6 +16,7 @@ export const Workspaces = (monitorID) => Widget.EventBox({
     onScrollDown: () => dispatch('-1'),
     class_name: 'workspaces',
     child: Widget.Box({
+        class_name: 'workspaces',
         children: Array.from({ length: 10}, (_, i) => i + 1).map(i => Widget.Button({
             attribute: i,
             label: `${i}`,

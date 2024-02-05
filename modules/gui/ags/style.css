@@ -53,19 +53,30 @@ scale highlight {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: 0px;
+  border: 2px solid #8b181c;
   background: #9c1c20;
   color: #ebefbf;
-  border: 2px solid #8b181c;
+}
+button:first-child {
+  border-radius: 10px 0px 0px 10px;
+}
+button:last-child {
+  border-radius: 0px 10px 10px 0px;
 }
 button:hover {
   box-shadow: inset 3px 3px 4px 3px #c85919, inset -3px -3px 4px 3px #c85919;
-  border: 2px solid #e46b25;
+  border-color: #e46b25;
 }
 button.focused {
   background: #c85919;
-  background-color: #c85919;
   border: 2px solid #e46b25;
+}
+button.focused:first-child {
+  border-radius: 10px 0px 0px 10px;
+}
+button.focused:last-child {
+  border-radius: 0px 10px 10px 0px;
 }
 button.focused:hover {
   background: #9c1c20;
