@@ -9,7 +9,7 @@
     settings = {
       monitor = [
         "DP-1,2560x1440@144,0x0,auto,bitdepth,10"
-        "DP-2,1920x1080@144,2560x440,auto"
+        "DP-2,1920x1080@144,2560x420,auto"
       ];
 
       exec-once = [
@@ -18,6 +18,7 @@
         "firefox"
         "webcord"
         "foot -s"
+        # "swayidle"
       ];
 
       input = {
@@ -29,7 +30,11 @@
       "$primary_color" = "rgb(81171b)";
       "$secondary_color" = "rgb(ad2e24)";
       "$inactive_color" = "rgb(2a2b2a)";
+      # "$background_color" = "rgb(3d0300)";
       "$background_color" = "rgb(3a0603)";
+      # "$background_color" = "rgb(520400)";
+
+      # "$background_color" = "rgb(290200)";
 
       general = {
         gaps_in = "4";
@@ -44,17 +49,17 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         disable_autoreload = true;
-        mouse_move_enables_dpms = true;
-        key_press_enables_dpms = true;
+        # mouse_move_enables_dpms = true;
+        # key_press_enables_dpms = true;
         background_color = "$background_color";
       };
 
       workspace = [
-        "name:F1,monitor:1,default:true"
-        "name:F2,monitor:1"
-        "name:F3,monitor:1"
-        "name:F4,monitor:1"
-        "name:F5,monitor:1"
+        "11,name:F1,monitor:DP-2,default:true"
+        "12,name:F2,monitor:DP-2"
+        "13,name:F3,monitor:DP-2"
+        "14,name:F4,monitor:DP-2"
+        "15,name:F5,monitor:DP-2"
       ];
 
       windowrulev2 = [
@@ -91,7 +96,7 @@
       "$mod" = "SUPER";
 
       bind = [
-        "$mod, Q, exec,footclient"
+        "$mod, Q, exec, footclient"
         "$mod, C, killactive,"
         "$mod, M, exit,"
         "$mod, R, exec, anyrun"
@@ -119,6 +124,11 @@
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 0"
+        "$mod, code:67, workspace, 11"
+        "$mod, code:68, workspace, 12"
+        "$mod, code:69, workspace, 13"
+        "$mod, code:70, workspace, 14"
+        "$mod, code:71, workspace, 15"
 
         "$mod SHIFT, 1, movetoworkspace, 1"
         "$mod SHIFT, 2, movetoworkspace, 2"
@@ -130,6 +140,11 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 0"
+        "$mod SHIFT, code:67, movetoworkspace, 11"
+        "$mod SHIFT, code:68, movetoworkspace, 12"
+        "$mod SHIFT, code:69, movetoworkspace, 13"
+        "$mod SHIFT, code:70, movetoworkspace, 14"
+        "$mod SHIFT, code:71, movetoworkspace, 15"
 
         ",XF86AudioPlay,exec,playerctl play-pause"
         ",XF86AudioNext,exec,playerctl next"
@@ -157,8 +172,5 @@
         "$mod, mouse:273, resizewindow"
       ];
     };
-    # extraConfig = ''
-    #   bind = $mod SHIFT,S,exec, grim -g "$(slurp -w 0)" - | wl-copy -t image/png
-    # '';
   };
 }

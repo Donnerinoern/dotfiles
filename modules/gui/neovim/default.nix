@@ -40,9 +40,13 @@
             colorizer = {
               enable = true;
               options = {
-                autoAttach = {
-                  enable = true;
+                filetypes = {
+                  css = {};
+                  html = {};
+                  scss = {};
+                  nix = {};
                 };
+                rgb_fn = true;
               };
             };
             illuminate.enable = true;

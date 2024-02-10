@@ -17,7 +17,7 @@ export const Workspaces = (monitorID) => Widget.EventBox({
     class_name: 'workspaces',
     child: Widget.Box({
         class_name: 'workspaces',
-        children: Array.from({ length: 10}, (_, i) => i + 1).map(i => Widget.Button({
+        children: Array.from({length: 20}, (_, i) => i + 1).map(i => Widget.Button({
             attribute: i,
             label: `${i}`,
             onClicked: () => dispatch(i),

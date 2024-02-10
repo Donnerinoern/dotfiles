@@ -36,14 +36,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/hyprlang-migration";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
 
     zig-overlay.url = "github:mitchellh/zig-overlay";
 
     # neovim-flake.url = "github:NotAShelf/neovim-flake";
-    neovim-flake.url = "github:Donnerinoern/neovim-flake";
+    neovim-flake.url = "github:Donnerinoern/neovim-flake/ui/colorizer";
 
     anyrun = {
       url = "github:Kirottu/anyrun";

@@ -1,7 +1,16 @@
 $primary-color: #540804;
 $secondary-color: #81171b;
-$button-color: #9c1c20;
-$btn-border-color: #8b181c;
+// $button-color: #9c1c20;
+// $button-color: #820700;
+
+$button-color: #a30800;
+// $button-color: #b80900;
+
+// $btn-border-color: #8b181c;
+// $btn-border-color: #7a0600;
+
+$btn-border-color: #ac0900;
+
 $btn-active-color: #c85919;
 $btn-active-border-color: #e46b25;
 $text-color: #ebefbf;
@@ -77,6 +86,9 @@ button {
 
     &:first-child {
         border-radius: 10px 0px 0px 10px;
+    }
+    &:only-child {
+        border-radius: 10px;
     }
     &:last-child {
         border-radius: 0px 10px 10px 0px;

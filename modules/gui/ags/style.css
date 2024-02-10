@@ -54,12 +54,15 @@ scale highlight {
 
 button {
   border-radius: 0px;
-  border: 2px solid #8b181c;
-  background: #9c1c20;
+  border: 2px solid #ac0900;
+  background: #a30800;
   color: #ebefbf;
 }
 button:first-child {
   border-radius: 10px 0px 0px 10px;
+}
+button:only-child {
+  border-radius: 10px;
 }
 button:last-child {
   border-radius: 0px 10px 10px 0px;
@@ -79,7 +82,7 @@ button.focused:last-child {
   border-radius: 0px 10px 10px 0px;
 }
 button.focused:hover {
-  background: #9c1c20;
+  background: #a30800;
   box-shadow: inset 3px 3px 4px 3px #c85919, inset -3px -3px 4px 3px #c85919;
 }
 

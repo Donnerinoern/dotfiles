@@ -1,7 +1,8 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, config, outputs, pkgs, lib, ... }:
 
 {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     inputs.hyprland.nixosModules.default
     inputs.nh.nixosModules.default
     {
@@ -10,9 +11,18 @@
       };
     }
     ./hardware-configuration.nix
-    ./home-manager.nix
+    # ./home-manager.nix
   ];
-  
+
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    extraSpecialArgs = {inherit inputs outputs;};
+    users = {
+      donnan = import ../home-manager/home.nix;
+    };
+  };
+
   # Bootloader.
   boot = {
     loader = {
@@ -23,7 +33,7 @@
     initrd.kernelModules = [ "kvm-amd" "amdgpu" ];
     supportedFilesystems = [ "bcachefs" ];
   };
-  
+
   virtualisation.libvirtd.enable = true;
 
   networking = {
@@ -47,7 +57,7 @@
       host  all      all    ::1/128        trust
       '';
   };
-  
+
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
@@ -105,7 +115,7 @@
     gvfs.enable = true;
     # printing.enable = true;
   };
-  
+
   services.greetd = {
     enable = true;
     settings = {
@@ -118,7 +128,7 @@
       '';
     };
   };
-  
+
   environment.etc."greetd/environments".text = ''
     Hyprland
   '';
@@ -149,6 +159,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [ # TODO: Move most of these to home.packages
     inputs.agenix.packages.x86_64-linux.default
+    mold
+    wev
     clang
     binutils
     libnotify
@@ -167,7 +179,7 @@
     gamescope
     ripgrep
     fd
-       
+
     playerctl
     hyprpaper
     grim
@@ -178,7 +190,7 @@
 
     nodejs
     sqlite
-    
+
     spotify
     gimp
     bun

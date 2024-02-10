@@ -27,7 +27,10 @@ in {
       package = cursorPackage;
     };
     packages = with pkgs; [
+      hugo
       starship
+      emacs
+      gdb
     ];
   };
 
@@ -40,7 +43,7 @@ in {
 
   gtk = {
     enable = true;
-    theme = { 
+    theme = {
       package = pkgs.adw-gtk3;
       name = "adw-gtk3-dark";
     };
@@ -182,16 +185,30 @@ in {
     };
     nix-index.enable = true;
 
-    swayidle = {
+    helix = {
       enable = true;
-      timeouts = [
-        { timeout = 300; command = "hyprctl dispatch dpms off"; }
-      ];
+      settings = {
+        theme = "merionette";
+        editor = {
+          line-number = "relative";
+          lsp.display-messages = true;
+        };
+      };
     };
   };
 
   services = {
     playerctld.enable = true;
     udiskie.enable = true;
+    swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 300;
+          command = "hyprctl dispatch dpms off";
+          resumeCommand = "hyprctl dispatch dpms on";
+        }
+      ];
+    };
   };
 }
