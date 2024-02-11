@@ -27,6 +27,7 @@ in {
       package = cursorPackage;
     };
     packages = with pkgs; [
+      elixir
       hugo
       starship
       emacs

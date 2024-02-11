@@ -55,11 +55,11 @@
       };
 
       workspace = [
-        "11,name:F1,monitor:DP-2,default:true"
-        "12,name:F2,monitor:DP-2"
-        "13,name:F3,monitor:DP-2"
-        "14,name:F4,monitor:DP-2"
-        "15,name:F5,monitor:DP-2"
+        "11,name = DP-2,default:true"
+        "12,name = DP-2"
+        "13,name = DP-2"
+        "14,name = DP-2"
+        "15,name = DP-2"
       ];
 
       windowrulev2 = [

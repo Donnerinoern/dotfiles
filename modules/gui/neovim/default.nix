@@ -39,13 +39,13 @@
           ui = {
             colorizer = {
               enable = true;
+              filetypes = {
+                css = {};
+                html = {};
+                scss = {};
+                nix = {};
+              };
               options = {
-                filetypes = {
-                  css = {};
-                  html = {};
-                  scss = {};
-                  nix = {};
-                };
                 rgb_fn = true;
               };
             };
