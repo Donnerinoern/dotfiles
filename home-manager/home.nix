@@ -27,19 +27,20 @@ in {
       package = cursorPackage;
     };
     packages = with pkgs; [
+      xdg-utils
+      eza
       elixir
       hugo
-      starship
       emacs
       gdb
     ];
   };
 
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk inputs.hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland ];
+    };
   };
 
   gtk = {
@@ -182,7 +183,12 @@ in {
     fzf.enable = true;
     fish = {
       enable = true;
-      shellInit = "starship init fish | source";
+      plugins = [
+        {
+          name = "Tide";
+          src = pkgs.fishPlugins.tide;
+        }
+      ];
     };
     nix-index.enable = true;
 

@@ -76,6 +76,12 @@
 
           utility = {
             surround.enable = true;
+            preview = {
+              markdownPreview = {
+                enable = true;
+                autoStart = true;
+              };
+            };
           };
 
           binds = {
@@ -98,7 +104,8 @@
             zig.enable = true;
             go.enable = true;
             css.enable = true;
-            tailwind.enable = true;
+            # tailwind.enable = true;
+            elixir.enable = true;
             rust = {
               enable = true;
               crates.enable = true;
