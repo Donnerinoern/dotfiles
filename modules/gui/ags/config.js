@@ -17,18 +17,18 @@ import NotificationPopup from './notification.js';
 
 Gtk.IconTheme.get_default().append_search_path('/home/donnan/svg');
 
-Utils.monitorFile(
-    `${App.configDir}/style.scss`,
-
-    function() {
-        const scss = `${App.configDir}/style.scss`;
-        const css = `${App.configDir}/style.css`;
-        Utils.exec(`sass ${scss} ${css}`);
-        App.resetCss();
-        App.applyCss(css);
-    },
-    'file',
-)
+// Utils.monitorFile(
+//     `${App.configDir}/style.scss`,
+//
+//     function() {
+//         const scss = `${App.configDir}/style.scss`;
+//         const css = `${App.configDir}/style.css`;
+//         Utils.exec(`sass ${scss} ${css}`);
+//         App.resetCss();
+//         App.applyCss(css);
+//     },
+//     'file',
+// )
 //
 
 const SepIcon = () => Widget.Icon({

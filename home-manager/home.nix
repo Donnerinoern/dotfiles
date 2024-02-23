@@ -33,6 +33,12 @@ in {
       hugo
       emacs
       gdb
+      prismlauncher
+      jdk21
+      inputs.hyprpaper.packages.${system}.default
+      inputs.hyprpicker.packages.${system}.default
+      inputs.hypridle.packages.${system}.default
+      inputs.hyprlock.packages.${system}.default
     ];
   };
 
@@ -207,15 +213,5 @@ in {
   services = {
     playerctld.enable = true;
     udiskie.enable = true;
-    swayidle = {
-      enable = true;
-      timeouts = [
-        {
-          timeout = 300;
-          command = "hyprctl dispatch dpms off";
-          resumeCommand = "hyprctl dispatch dpms on";
-        }
-      ];
-    };
   };
 }

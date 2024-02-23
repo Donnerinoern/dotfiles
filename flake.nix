@@ -36,14 +36,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland/hyprlang-migration";
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprpaper.url = "github:hyprwm/hyprpaper";
+
+    hyprpicker.url = "github:hyprwm/hyprpicker";
+
+    hypridle.url = "github:hyprwm/hypridle";
+
+    hyprlock.url = "github:hyprwm/hyprlock";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
 
     zig-overlay.url = "github:mitchellh/zig-overlay";
 
-    # neovim-flake.url = "github:NotAShelf/neovim-flake";
-    neovim-flake.url = "github:Donnerinoern/neovim-flake/language/markdown";
+    neovim-flake.url = "github:NotAShelf/neovim-flake";
+    # neovim-flake.url = "github:Donnerinoern/neovim-flake/language/markdown";
 
     anyrun = {
       url = "github:Kirottu/anyrun";

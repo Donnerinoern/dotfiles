@@ -104,7 +104,7 @@
             zig.enable = true;
             go.enable = true;
             css.enable = true;
-            # tailwind.enable = true;
+            tailwind.enable = true;
             elixir.enable = true;
             rust = {
               enable = true;

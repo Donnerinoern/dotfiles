@@ -14,11 +14,12 @@
 
       exec-once = [
         "ags"
-        "hyprpaper"
+        # "hyprpaper"
         "firefox"
-        "webcord"
+        # "webcord"
+        "vesktop"
         "foot -s"
-        # "swayidle"
+        "hypridle"
       ];
 
       input = {
@@ -30,11 +31,7 @@
       "$primary_color" = "rgb(81171b)";
       "$secondary_color" = "rgb(ad2e24)";
       "$inactive_color" = "rgb(2a2b2a)";
-      # "$background_color" = "rgb(3d0300)";
       "$background_color" = "rgb(3a0603)";
-      # "$background_color" = "rgb(520400)";
-
-      # "$background_color" = "rgb(290200)";
 
       general = {
         gaps_in = "4";
@@ -49,22 +46,22 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         disable_autoreload = true;
-        # mouse_move_enables_dpms = true;
-        # key_press_enables_dpms = true;
         background_color = "$background_color";
       };
 
       workspace = [
-        "11,name = DP-2,default:true"
-        "12,name = DP-2"
-        "13,name = DP-2"
-        "14,name = DP-2"
-        "15,name = DP-2"
+        "11,monitor:DP-2,default:true"
+        "12,monitor:DP-2"
+        "13,monitor:DP-2"
+        "14,monitor:DP-2"
+        "15,monitor:DP-2"
       ];
 
       windowrulev2 = [
         "monitor 0,class:^(firefox)$"
         "monitor 1,class:^(WebCord)"
+        "monitor 1,class:^(ArmCord)"
+        "monitor 1,class:^(Vesktop)"
       ];
 
       decoration = {
@@ -109,11 +106,6 @@
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
 
-        "$mod SHIFT, up, resizeactive, 0 -100"
-        "$mod SHIFT, down, resizeactive, 0 100"
-        "$mod SHIFT, left, resizeactive, -100 0"
-        "$mod SHIFT, right, resizeactive, 100 0"
-
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
@@ -123,7 +115,6 @@
         "$mod, 7, workspace, 7"
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 0"
         "$mod, code:67, workspace, 11"
         "$mod, code:68, workspace, 12"
         "$mod, code:69, workspace, 13"
@@ -139,7 +130,6 @@
         "$mod SHIFT, 7, movetoworkspace, 7"
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
-        "$mod SHIFT, 0, movetoworkspace, 0"
         "$mod SHIFT, code:67, movetoworkspace, 11"
         "$mod SHIFT, code:68, movetoworkspace, 12"
         "$mod SHIFT, code:69, movetoworkspace, 13"
@@ -157,6 +147,7 @@
         "$mod, mouse_up, workspace, e-1"
 
         ''$mod SHIFT, S, exec, grim -g "$(slurp -w 0)" - | wl-copy -t image/png''
+        "$mod SHIFT, C, exec, hyprpicker -f hex -a"
       ];
 
       binde = [
@@ -165,6 +156,11 @@
 
         "$mod, XF86AudioRaiseVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+"
         "$mod, XF86AudioLowerVolume,exec, wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+
+        "$mod SHIFT, up, resizeactive, 0 -100"
+        "$mod SHIFT, down, resizeactive, 0 100"
+        "$mod SHIFT, left, resizeactive, -100 0"
+        "$mod SHIFT, right, resizeactive, 100 0"
       ];
 
       bindm = [

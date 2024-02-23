@@ -26,7 +26,15 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        # extraEntries = {
+        #   "alpine.conf" = ''
+        #     title Alpine Linux
+        #
+        #   '';
+        # };
+      };
       efi.canTouchEfiVariables = true;
     };
     kernelPackages = pkgs.linuxPackages_zen;
@@ -200,7 +208,8 @@
 
     # zoom-us
     vesktop
-    rust-bin.stable.latest.default
+    # rust-bin.stable.latest.default
+    rust-bin.nightly.latest.default
     zigpkgs.master
   ];
 
