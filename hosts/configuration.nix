@@ -159,7 +159,7 @@
     overlays = [
       # inputs.neovim-nightly-overlay.overlay
       inputs.rust-overlay.overlays.default
-      inputs.zig-overlay.overlays.default
+      # inputs.zig-overlay.overlays.default
     ];
   };
 
@@ -204,13 +204,11 @@
     bun
     python3
 
-    jetbrains.idea-ultimate
-
     # zoom-us
     vesktop
     # rust-bin.stable.latest.default
     rust-bin.nightly.latest.default
-    zigpkgs.master
+    # zigpkgs.master
   ];
 
   environment = {

@@ -48,7 +48,7 @@
 
     rust-overlay.url = "github:oxalica/rust-overlay";
 
-    zig-overlay.url = "github:mitchellh/zig-overlay";
+    # zig-overlay.url = "github:mitchellh/zig-overlay";
 
     neovim-flake.url = "github:NotAShelf/neovim-flake";
     # neovim-flake.url = "github:Donnerinoern/neovim-flake/language/markdown";
