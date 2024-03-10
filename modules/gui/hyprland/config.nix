@@ -12,6 +12,10 @@
         "DP-2,1920x1080@144,2560x420,auto"
       ];
 
+      env = [
+        "HYPRCURSOR_THEME,HyprBibataModernClassicSVG"
+      ];
+
       exec-once = [
         "ags"
         # "hyprpaper"

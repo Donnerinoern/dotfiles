@@ -39,6 +39,7 @@ in {
       inputs.hyprpicker.packages.${system}.default
       inputs.hypridle.packages.${system}.default
       inputs.hyprlock.packages.${system}.default
+      inputs.hyprcursor.packages.${system}.default
     ];
   };
 
