@@ -27,6 +27,7 @@ in {
       package = cursorPackage;
     };
     packages = with pkgs; [
+      wezterm
       xdg-utils
       eza
       elixir
@@ -46,7 +47,10 @@ in {
   xdg = {
     portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk inputs.hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland ];
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+        inputs.hyprland.packages.x86_64-linux.xdg-desktop-portal-hyprland
+      ];
     };
   };
 

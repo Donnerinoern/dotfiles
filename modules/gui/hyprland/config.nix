@@ -65,7 +65,7 @@
         "monitor 0,class:^(firefox)$"
         "monitor 1,class:^(WebCord)"
         "monitor 1,class:^(ArmCord)"
-        "monitor 1,class:^(Vesktop)"
+        "monitor 1,class:^(vesktop)"
       ];
 
       decoration = {
