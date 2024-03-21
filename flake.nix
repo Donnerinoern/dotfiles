@@ -53,7 +53,6 @@
     # zig-overlay.url = "github:mitchellh/zig-overlay";
 
     neovim-flake.url = "github:NotAShelf/neovim-flake";
-    # neovim-flake.url = "github:Donnerinoern/neovim-flake/language/markdown";
 
     anyrun = {
       url = "github:Kirottu/anyrun";
@@ -71,5 +70,6 @@
     agenix.url = "github:ryantm/agenix";
 
     eza.url = "github:eza-community/eza";
+
   };
 }

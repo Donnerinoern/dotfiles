@@ -27,7 +27,6 @@ in {
       package = cursorPackage;
     };
     packages = with pkgs; [
-      wezterm
       xdg-utils
       eza
       elixir
@@ -201,6 +200,7 @@ in {
         }
       ];
     };
+
     nix-index.enable = true;
 
     helix = {
