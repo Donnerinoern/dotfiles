@@ -8,8 +8,9 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        "DP-1,2560x1440@144,0x0,auto,bitdepth,10"
-        "DP-2,1920x1080@144,2560x420,auto"
+        "HDMI-A-1,1920x1080@60,-1920x0,auto"
+        "DP-1,2560x1440@165,0x0,auto,bitdepth,10,vrr,1"
+        "DP-2,2560x1440@144,2560x50,auto,bitdepth,10"
       ];
 
       env = [

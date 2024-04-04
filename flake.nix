@@ -36,7 +36,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/workspace-storage-refactor";
 
     hyprpaper.url = "github:hyprwm/hyprpaper";
 
