@@ -40,6 +40,7 @@ in {
       inputs.hypridle.packages.${system}.default
       inputs.hyprlock.packages.${system}.default
       inputs.hyprcursor.packages.${system}.default
+      texliveBasic
     ];
   };
 
