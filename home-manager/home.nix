@@ -41,6 +41,8 @@ in {
       inputs.hyprlock.packages.${system}.default
       inputs.hyprcursor.packages.${system}.default
       texliveBasic
+      zoom-us
+      alacritty
     ];
   };
 
