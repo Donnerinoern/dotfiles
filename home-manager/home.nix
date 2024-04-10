@@ -42,7 +42,6 @@ in {
       inputs.hyprcursor.packages.${system}.default
       texliveBasic
       zoom-us
-      alacritty
     ];
   };
 
@@ -161,6 +160,19 @@ in {
     ags = {
       enable = true;
       configDir = ../modules/gui/ags;
+    };
+
+    alacritty = {
+      enable = true;
+      settings = {
+        font = {
+          normal = {
+            family = "Iosevka Medium";
+            style = "Regular";
+          };
+          size = 12;
+        };
+      };
     };
 
     git = {
