@@ -42,6 +42,7 @@ in {
       inputs.hyprcursor.packages.${system}.default
       texliveBasic
       zoom-us
+      nh
     ];
   };
 

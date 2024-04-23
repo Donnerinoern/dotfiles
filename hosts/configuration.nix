@@ -4,12 +4,6 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.hyprland.nixosModules.default
-    inputs.nh.nixosModules.default
-    {
-      nh = {
-        enable = true;
-      };
-    }
     ./hardware-configuration.nix
     # ./home-manager.nix
   ];
@@ -42,7 +36,14 @@
     supportedFilesystems = [ "bcachefs" ];
   };
 
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+    };
+  };
 
   networking = {
     hostName = "brutus";
@@ -177,7 +178,7 @@
     ninja
     webcord-vencord
     armcord
-    nvtop-amd
+    nvtopPackages.amd
     dart-sass
     fastfetch
     age
@@ -243,6 +244,10 @@
     };
 
     hyprland = {
+      enable = true;
+    };
+
+    nh = {
       enable = true;
     };
 

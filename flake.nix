@@ -62,11 +62,6 @@
     ags.url = "github:Aylur/ags";
     # ags.url = "github:Donnerinoern/ags";
 
-    nh = {
-      url = "github:viperML/nh";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     agenix.url = "github:ryantm/agenix";
 
     eza.url = "github:eza-community/eza";
